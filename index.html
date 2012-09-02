@@ -2,8 +2,8 @@
 <html id="home" lang="es" ng-app="petroleum_app">
 <head>
 	<meta charset=utf-8 />
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-	<title>Petroleum</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Petroleum</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/toogle.css">
@@ -20,11 +20,17 @@
     <!-- top navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <a class="brand" href="#">Petroleum</a>
+            <a class="brand" href="#">Petroleum - V 0.0.6</a>
             <ul class="nav">
-                <li onclick="javascript:showRender('#list');"><a href="#">Lista</a></li>
-                <li onclick="javascript:showRender('#map');"><a href="#">Mapa</a></li>
-                <li><a href="#" ng-click="gasToogle()">Refresh</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#" onclick="showRender('#list')">Lista</a></li>
+                <li><a href="#" onclick="showRender('#map')">Mapa</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#" onclick="gasToogle()">Refresh</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#" onclick="showOption('#id0')">Lugar</a></li>
+                <li><a href="#" onclick="showOption('#id1')">Posicion</a></li>
+                <li><a href="#" onclick="showOption('#id2')">Combustible</a></li>
             </ul>
         </div>
     </div>
@@ -126,21 +132,13 @@
         <div id="map_canvas" class="span12">Mapa</div>
     </div>
 
-    <!-- foot navbar -->
-    <div class="navbar navbar-fixed-bottom">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <li><a href="#" onclick="javascript:showOption('#id0');">Mi Lugar</a></li>
-          <li><a href="#" onclick="javascript:showOption('#id1');">Mi Posicion</a></li>
-          <li><a href="#" onclick="javascript:showOption('#id2');">Mi Combustible</a></li>
-        </ul>
-      </div>
-    </div>
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=weather"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 
     <script src="lib/jquery/jquery-1.7.2.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
@@ -154,8 +152,6 @@
 
     <script src="js/MapsAndMarkers.js"></script>
     <script src="js/sliding.form.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=weather"></script>
-    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+    <script src="js/geolocationmarker-compiled.js"></script>
 </body>
 </html>

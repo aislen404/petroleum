@@ -37,7 +37,7 @@ mapObject = (function() {
 
         this.theMap = document.getElementById('map_canvas');                    //map div id
 
-        this.positionTracking = false;
+        //this.positionTracking = false;
 
         var myOptions = {
            zoom: this.theZoom,
@@ -65,29 +65,27 @@ mapObject = (function() {
             streetViewControlOptions: {
                 position: google.maps.ControlPosition.LEFT_TOP
             }
-        }
+        };
 
         //the instance of the map
         this.mapInstance = new google.maps.Map(this.theMap,myOptions);
 
-        //For traffic density service
-        this.trafficLayer = false;
-        this.trafficLayerInstance  = new google.maps.TrafficLayer();
+        var map = this.mapInstance;
 
-        //For public transport service
-        this.transitLayer = false;
-        this.transitLayerInstance = new google.maps.TransitLayer();
+        GeoMarker = new GeolocationMarker();
+        GeoMarker.setCircleOptions({fillColor: '#808080'});
 
-        //For weather service
-        this.weatherLayer = false;
-        this.weatherLayerInstance = new google.maps.weather.WeatherLayer({
-            temperatureUnits: google.maps.weather.TemperatureUnit.CELSIUS,
-            windSpeedUnits: google.maps.weather.WindSpeedUnit.KILOMETERS_PER_HOUR
+        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+            map.setCenter(this.getPosition());
+            map.fitBounds(this.getBounds());
         });
 
-        //For directions service
-        var directionsLayerInstance;
-        this.directionsServiceInstance = new google.maps.DirectionsService();
+        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+            alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        GeoMarker.setMap(map);
+
     }
 
     //For register the events
@@ -110,6 +108,7 @@ mapObject = (function() {
         }
     };
     mapObject.prototype.positionTrackingOn = function() {
+        console.log('tracking on');
         var geoLoc, options, watchID;
         if (!this.nav) {
             this.nav = window.navigator;
@@ -143,65 +142,6 @@ mapObject = (function() {
             window.userPositionMarker.setMap(null);
         } catch (_error) {}
         return this.positionTracking.state = false;
-    };
-
-    // Traffic layer
-    mapObject.prototype.trafficToogle = function () {
-        if (this.trafficLayer==false) {
-            this.trafficLayer = true;
-            return this.trafficLayerOn();
-        } else{
-            this.trafficLayer = false;
-            return this.trafficLayerOff();
-        }
-    };
-    mapObject.prototype.trafficLayerOn = function (){
-        return this.trafficLayerInstance.setMap(this.mapInstance);
-    };
-    mapObject.prototype.trafficLayerOff = function (){
-        return this.trafficLayerInstance.setMap(null);
-    };
-
-    //Transit layer
-    mapObject.prototype.transitToogle = function (){
-        if (this.transitLayer==false) {
-            this.transitLayer = true;
-            return this.transitLayerOn();
-        } else{
-            this.transitLayer = false;
-            return this.transitLayerOff();
-        }
-    };
-    mapObject.prototype.transitLayerOn = function (){
-        return  this.transitLayerInstance.setMap(this.mapInstance);
-    };
-    mapObject.prototype.transitLayerOff = function (){
-        return  this.transitLayerInstance.setMap(null);
-    };
-
-    //Weather layer
-    mapObject.prototype.weatherToogle = function () {
-        if (this.weatherLayer==false) {
-            this.weatherLayer = true;
-            return this.weatherLayerOn();
-        } else{
-            this.weatherLayer = false;
-            return this.weatherLayerOff();
-        }
-
-    };
-    mapObject.prototype.weatherLayerOn = function (){
-        this.weatherLayerInstance.setMap(this.mapInstance);
-
-        //TODO: Cloud layer?¿
-        //this.cloudLayerInstance = new google.maps.weather.CloudLayer();
-        //this.cloudLayerInstance.setMap(this.mapInstance);
-    };
-    mapObject.prototype.weatherLayerOff = function (){
-        this.weatherLayerInstance.setMap(null);
-
-        //TODO: Cloud layer?¿
-        //this.cloudLayerInstance.cloudLayer.setMap(null);
     };
 
     // generic in geo - May be will be used in the DGT services to get the parameters needed in the query

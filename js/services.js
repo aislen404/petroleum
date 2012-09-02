@@ -12,7 +12,7 @@ module = angular.module('petroleum_app.services',['ngResource']);
 module.factory('mapServiceProvider', function (){
     var myOptions = {};
     var mapa = new mapObject (myOptions);   //mapObject is an interface for google map API
-    mapa.positionTrack();                   //swicht on the geolocalization (if is available)
+    //mapa.positionTrack();                   //swicht on the geolocalization (if is available)
     return mapa;                            //returning the google map object
 });
 
