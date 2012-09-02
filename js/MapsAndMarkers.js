@@ -55,11 +55,11 @@ mapObject = (function() {
             zoomControl: true,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.LARGE,
-                position: google.maps.ControlPosition.LEFT_CENTER
+                position: google.maps.ControlPosition.RIGHT_CENTER
             },
             scaleControl: true,
             scaleControlOptions: {
-                position: google.maps.ControlPosition.TOP_LEFT
+                position: google.maps.ControlPosition.TOP_CENTER
             },
             streetViewControl: false,
             streetViewControlOptions: {

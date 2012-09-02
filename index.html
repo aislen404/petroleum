@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="home" lang="es">
+<html id="home" lang="es" ng-app="petroleum_app">
 <head>
 	<meta charset=utf-8 />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -62,7 +62,7 @@
                         <fieldset class="step">
                             <legend>Mi Combustible</legend>
                             <label for="select1" class="checkbox"><span>Selecciona: </span></label>
-                            <select id="select1" class="span2">
+                            <select id="select1" class="span2" ng-model="gasolina_type" ng-change="gasToogle()">
                                 <option value="0" selected>--------------</option>
                                 <option value="1">Gasolina 95</option>
                                 <option value="2">Gasolina 97</option>
@@ -96,7 +96,31 @@
 
     <!-- Renders -->
     <div id="list" class="row-fluid">
-        <div class="span12">Lista</div>
+        <div class="span12">
+            <table class=" table table-condensed table-hover table-bordered table-striped">
+                <caption>gasolineras</caption>
+                <thead>
+                <tr>
+                    <th>rotulo</th>
+                    <th>precio</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="map" class="row-fluid">

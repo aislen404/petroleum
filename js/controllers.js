@@ -10,6 +10,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
 // --------- initialization of model-view bindings  --------- \\
     //the dataset
     $scope.datos;
+    $scope.gasolina_type=0;
 
     // map object
     $scope.mapObj = null;
@@ -20,6 +21,8 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
     // Main function in ng-init
     $scope.BeganToBegin = function (){
         $scope.createMap();
+        $scope.gasToogle();
+
     };
     // Control the creation of map
     $scope.createMap = function() {
