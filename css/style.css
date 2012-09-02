@@ -3,8 +3,7 @@
     padding:0px;
 }
 #content{
-    left: 37%;
-    position: absolute;
+    position: inherit;
     z-index: 1000;
 }
 #wrapper{
@@ -16,7 +15,7 @@
     border-radius:10px;
     border:2px solid #fff;
     background-color:#f9f9f9;
-    width:430px;
+    width:100%;
     overflow:hidden;
 }
 #steps{
@@ -202,5 +201,12 @@ span.error{
 
 
 #map_canvas{
-    height: 525px;
+    height: 600px;
+    top: 40px;
+}
+#list{
+    margin-top: 22px;
+}
+#myModal{
+    overflow: visible;
 }

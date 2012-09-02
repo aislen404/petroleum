@@ -204,34 +204,6 @@ mapObject = (function() {
         //this.cloudLayerInstance.cloudLayer.setMap(null);
     };
 
-    //Directions layer
-    mapObject.prototype.addDirectionsLayer = function (){
-        directionsLayerInstance = new google.maps.DirectionsRenderer({
-            preserveViewport: true,
-            draggable: true
-        });
-        directionsLayerInstance.setMap(this.mapInstance);
-        directionsLayerInstance.setPanel(this.theDirectionsPanel);
-    };
-    mapObject.prototype.clearDirectionsLayer = function(){
-        console.log('clearDirectionsLayer');
-        directionsLayerInstance.setMap(null);
-        directionsLayerInstance.setPanel(null);
-
-        directionsLayerInstance = new google.maps.DirectionsRenderer();
-
-        directionsLayerInstance.setMap(this.mapInstance);
-        directionsLayerInstance.setPanel(this.theDirectionsPanel);
-        console.log('clearDirectionsLayer finish');
-    };
-    mapObject.prototype.calculateDirectionsLayer = function(request){
-        this.directionsServiceInstance.route(request, function(response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsLayerInstance.setDirections(response);
-            }
-        });
-    };
-
     // generic in geo - May be will be used in the DGT services to get the parameters needed in the query
     mapObject.prototype.getLatNS = function (){ return  this.mapInstance.getBounds().getNorthEast().lat(); };
     mapObject.prototype.getLongNS = function (){ return  this.mapInstance.getBounds().getNorthEast().lng(); };
@@ -293,9 +265,16 @@ icoResolutor = function (type) {
         case ('Marker'):
             ico ='img/default.png';
             break;
-         case ('Gasolinera'):
+        case ('Gasolinera'):
             ico = 'img/gasolinera.png';
             break;
+        case ('barata'):
+            ico = 'img/star.png';
+            break;
+        case ('cara'):
+            ico = 'img/shit.png';
+            break;
+
         default:
             ico ='img/default.png';
     }

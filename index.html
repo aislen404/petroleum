@@ -18,77 +18,85 @@
 <body ng-init="BeganToBegin()" ng-controller="petroleumCtrl" >
 
     <!-- top navbar -->
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <a class="brand" href="#">Petroleum</a>
             <ul class="nav">
                 <li onclick="javascript:showRender('#list');"><a href="#">Lista</a></li>
                 <li onclick="javascript:showRender('#map');"><a href="#">Mapa</a></li>
+                <li><a href="#" ng-click="gasToogle()">Refresh</a></li>
             </ul>
         </div>
     </div>
 
     <div>
-    	<!-- filters-->
-        <div id="content">
-            <div id="wrapper">
-                <div id="steps">
-                    <form id="formElem" name="formElem">
-                        <fieldset class="step">
-                            <legend>Provincias y Poblaciones</legend>
-                                --------------------
-                        </fieldset>
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Filtros</h3>
+            </div>
+            <div class="modal-body">
+                <div id="content">
+                    <div id="wrapper">
+                        <div id="steps">
+                            <form id="formElem" name="formElem">
+                                <fieldset class="step">
+                                    <legend>Provincias y Poblaciones</legend>
+                                    --------------------
+                                </fieldset>
 
-                        <fieldset class="step">
-                            <legend>Mi Posicion</legend>
+                                <fieldset class="step">
+                                    <legend>Mi Posicion</legend>
 
-                            <div class="iphone-toggle-buttons">
-                                <label for="checkbox1">
-                                    <input type="checkbox" id="checkbox1" checked="checked" />
-                                    <span>Posicion</span>
-                                </label>
-                            </div>
+                                    <div class="iphone-toggle-buttons">
+                                        <label for="checkbox1">
+                                            <input type="checkbox" id="checkbox1" checked="checked" />
+                                            <span>Posicion</span>
+                                        </label>
+                                    </div>
 
-                            <div>
-                                <label for="range1">
-                                    <input type="range" id="range1" min="1000" max="100000" step="500" value="1000" onchange="javascript:output1.value=(parseInt(range1.value)/1000)+'Km';"/>
-                                    <output id="output1" for="range1"></output>
-                                    <span>Radio</span>
-                                </label>
-                            </div>
+                                    <div>
+                                        <label for="range1">
+                                            <input type="range" id="range1" min="1000" max="100000" step="500" value="1000" onchange="javascript:output1.value=(parseInt(range1.value)/1000)+'Km';"/>
+                                            <output id="output1" for="range1"></output>
+                                            <span>Radio</span>
+                                        </label>
+                                    </div>
 
-                        </fieldset>
+                                </fieldset>
 
-                        <fieldset class="step">
-                            <legend>Mi Combustible</legend>
-                            <label for="select1" class="checkbox"><span>Selecciona: </span></label>
-                            <select id="select1" class="span2" ng-model="gasolina_type" ng-change="gasToogle()">
-                                <option value="0" selected>--------------</option>
-                                <option value="1">Gasolina 95</option>
-                                <option value="2">Gasolina 97</option>
-                                <option value="3">Gasolina 98</option>
-                                <option value="4">Gasóleo A habitual</option>
-                                <option value="5">Nuevo gasóleo A</option>
-                                <option value="6">Gasóleo B</option>
-                                <option value="7">Gasóleo C</option>
-                                <option value="8">Biodiésel</option>
-                            </select>
-                        </fieldset>
+                                <fieldset class="step">
+                                    <legend>Mi Combustible</legend>
+                                    <label for="select1" class="checkbox"><span>Selecciona: </span></label>
+                                    <select id="select1" class="span2" ng-model="gasolina_type" ng-change="gasToogle()">
+                                        <option value="0" selected>--------------</option>
+                                        <option value="1">Gasolina 95</option>
+                                        <option value="2">Gasolina 97</option>
+                                        <option value="3">Gasolina 98</option>
+                                        <option value="4">Gasóleo A habitual</option>
+                                        <option value="5">Nuevo gasóleo A</option>
+                                        <option value="6">Gasóleo B</option>
+                                        <option value="7">Gasóleo C</option>
+                                        <option value="8">Biodiésel</option>
+                                    </select>
+                                </fieldset>
 
-                    </form>
-                </div>
-                <div id="navigation">
-                    <ul>
-                        <li class="selected">
-                            <a id="id0" href="#">Mi Lugar</a>
-                        </li>
-                        <li>
-                            <a id="id1" href="#">Mi Posicion</a>
-                        </li>
-                        <li>
-                            <a id="id2" href="#">Mi Combustible</a>
-                        </li>
-                    </ul>
+                            </form>
+                        </div>
+                        <div id="navigation">
+                            <ul>
+                                <li class="selected">
+                                    <a id="id0" href="#">Mi Lugar</a>
+                                </li>
+                                <li>
+                                    <a id="id1" href="#">Mi Posicion</a>
+                                </li>
+                                <li>
+                                    <a id="id2" href="#">Mi Combustible</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,9 @@ $(function() {
 	var stepsWidth = 0;
     var widths = [];
 
-    $('#content').hide();
+    $('#myModal').modal('toggle');
+    $('#myModal').modal('hide');
+
     $('#list').hide();
 
     $('#steps .step').each(function(i){
@@ -41,7 +43,8 @@ $(function() {
 });
 
 function showOption (x){
-    $('#content').show();
+    $('#myModal').modal('toggle');
+    $('#myModal').modal('show');
     $(x).click();
 }
 function showRender (x){

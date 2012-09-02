@@ -29,14 +29,15 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
         //calling the servce for create a map to display the datasets
         $scope.mapObj = mapServiceProvider;
 
+
         // Setting map event control for zoom changes
         $scope.mapObj.registerMapEvent('zoom_changed',function(){
-            //console.log ('[EVENT] ZOOM:',$scope.mapObj.getZoom());
+            console.log ('[EVENT] ZOOM:',$scope.mapObj.getZoom());
         });
 
         //Setting map event control for bounds changes
         $scope.mapObj.registerMapEvent('bounds_changed',function(){
-            //console.log ('[EVENT] BOUNDS:',$scope.mapObj.getLatNS(),$scope.mapObj.getLongNS(),$scope.mapObj.getLatSW(),$scope.mapObj.getLongSW());
+            console.log ('[EVENT] BOUNDS:',$scope.mapObj.getLatNS(),$scope.mapObj.getLongNS(),$scope.mapObj.getLatSW(),$scope.mapObj.getLongSW());
         });
     };
 
@@ -50,9 +51,15 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
         }catch(e){} //clearMarkers is a method of MarkerCluster
 
         if($scope.gasolina_type !=0 ){
-            var URI = 'dataModels/mitycProxy.php?tipo='+$scope.gasolina_type;
+
+            var latNS = $scope.mapObj.getLatNS();
+            var lngNS = $scope.mapObj.getLongNS();
+            var latSW = $scope.mapObj.getLatSW();
+            var lngSW = $scope.mapObj.getLongSW();
+
+            var URI = 'dataModels/mitycProxy.php?tipo='+$scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
+            console.log(URI);
             var arryOfMarkers = [];
-            $scope.datos = [];
 
             $.ajax({
                 type: 'GET',
@@ -66,17 +73,40 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                     var cheap;
                     var cheapOption;
                     var gasolinera;
+                    var theData;
+                    $scope.datos = [];
 
                     $(data).find('elemento').each(function()
                     {
-                        var theData = {
-                            tipo : 'Gasolinera',
-                            precio: $(this).find('precio').text()+' €',
-                            rotulo: $(this).find('rotulo').text(),
-                            alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
-                            lat : $(this).find('y').text(),
-                            lng : $(this).find('x').text()
-                        };
+
+                        if(i==1){
+                            theData = {
+                                tipo : 'barata',
+                                precio: $(this).find('precio').text()+' €',
+                                rotulo: $(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                lat : $(this).find('y').text(),
+                                lng : $(this).find('x').text()
+                            };
+                        }else if(i==$(data).find('elemento').length){
+                            theData = {
+                                tipo : 'cara',
+                                precio: $(this).find('precio').text()+' €',
+                                rotulo: $(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                lat : $(this).find('y').text(),
+                                lng : $(this).find('x').text()
+                            };
+                        }else{
+                            theData = {
+                                tipo : 'Gasolinera',
+                                precio: $(this).find('precio').text()+' €',
+                                rotulo: $(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                lat : $(this).find('y').text(),
+                                lng : $(this).find('x').text()
+                            };
+                        }
 
                         addRow(theData);
                         $scope.datos.push(theData);
