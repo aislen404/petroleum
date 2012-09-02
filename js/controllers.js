@@ -9,7 +9,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
 
 // --------- initialization of model-view bindings  --------- \\
     //the dataset
-    $scope.datos;
+    $scope.datos = [];
     $scope.gasolina_type=0;
 
     // map object
@@ -69,11 +69,14 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                     {
                         var theData = {
                             tipo : 'Gasolinera',
+                            precio: $(this).find('precio').text()+' €',
+                            rotulo: $(this).find('rotulo').text(),
                             alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
                             lat : $(this).find('y').text(),
                             lng : $(this).find('x').text()
                         };
 
+                        $scope.datos.push(theData);
                         arryOfMarkers.push(markerCreator(theData,$scope.mapObj.mapInstance));
 
                         var auxPrecio = parseInt(theData.alias.replace(/,/g, '.'));
@@ -93,15 +96,14 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                     });
 
                     $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
+                    $scope.datos = JSON.stringify($scope.datos);
+
+                    $('#datos').html($scope.datos);
+
                     console.log('Gasolineras',i-1);
-
                     console.log('cheapOption',cheapOption);
-                    //var ch = setMarkers(cheapOption,$scope.mapObj.mapInstance,1);
-                    //ch.b.set('style','color: #FF0000;font-family: Trebuchet MS;font-size: 15px;font-weight: bold;left: -34%;letter-spacing: 2px;padding: 2px;position: relative;top: -33px;');
-
                     console.log('expensiveOption',expensiveOption);
-                    //var ex = setMarkers(expensiveOption,$scope.mapObj.mapInstance,-1);
-                    //ex.b.set('style','color: #00FF00;font-family: Trebuchet MS;font-size: 15px;font-weight: bold;left: -34%;letter-spacing: 2px;padding: 2px;position: relative;top: -33px;');
+                    console.log($scope.datos);
 
                 }
             });

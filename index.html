@@ -103,23 +103,21 @@
                 <tr>
                     <th>rotulo</th>
                     <th>precio</th>
+                    <th>latitud</th>
+                    <th>longitud</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
-                </tr>
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
-                </tr>
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
+                <tr ng-repeat="dato in datos">
+                    <td>{{dato.rotulo}}</td>
+                    <td>{{dato.precio}}</td>
+                    <td>{{dato.lat}}</td>
+                    <td>{{dato.lng}}</td>
                 </tr>
                 </tbody>
             </table>
+            <p id="datos">
+            </p>
         </div>
     </div>
 
