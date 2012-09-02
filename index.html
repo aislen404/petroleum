@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html id="home" lang="es">
+<head>
+	<meta charset=utf-8 />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<title>Petroleum</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/toogle.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="shortcut icon" href="icos/favicon_yo.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icos/yo_144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icos/yo_114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icos/yo_72.png">
+    <link rel="apple-touch-icon-precomposed" href="icos/yo_57.png">
+</head>
+<body ng-controller="petroleumCtrl">
+
+    <!-- top navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Petroleum</a>
+            <ul class="nav">
+                <li onclick="javascript:showRender('#list');"><a href="#">Lista</a></li>
+                <li onclick="javascript:showRender('#map');"><a href="#">Mapa</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div ng-init="BeganToBegin()">
+    	<!-- filters-->
+        <div id="content">
+            <div id="wrapper">
+                <div id="steps">
+                    <form id="formElem" name="formElem">
+                        <fieldset class="step">
+                            <legend>Provincias y Poblaciones</legend>
+                                --------------------
+                        </fieldset>
+
+                        <fieldset class="step">
+                            <legend>Mi Posicion</legend>
+
+                            <div class="iphone-toggle-buttons">
+                                <label for="checkbox1">
+                                    <input type="checkbox" id="checkbox1" checked="checked" />
+                                    <span>Posicion</span>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label for="range1">
+                                    <input type="range" id="range1" min="1000" max="100000" step="500" value="1000" onchange="javascript:output1.value=(parseInt(range1.value)/1000)+'Km';"/>
+                                    <output id="output1" for="range1"></output>
+                                    <span>Radio</span>
+                                </label>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset class="step">
+                            <legend>Mi Combustible</legend>
+                            <label for="select1" class="checkbox"><span>Selecciona: </span></label>
+                            <select id="select1" class="span2">
+                                <option value="0" selected>--------------</option>
+                                <option value="1">Gasolina 95</option>
+                                <option value="2">Gasolina 97</option>
+                                <option value="3">Gasolina 98</option>
+                                <option value="4">Gasóleo A habitual</option>
+                                <option value="5">Nuevo gasóleo A</option>
+                                <option value="6">Gasóleo B</option>
+                                <option value="7">Gasóleo C</option>
+                                <option value="8">Biodiésel</option>
+                            </select>
+                        </fieldset>
+
+                    </form>
+                </div>
+                <div id="navigation">
+                    <ul>
+                        <li class="selected">
+                            <a id="id0" href="#">Mi Lugar</a>
+                        </li>
+                        <li>
+                            <a id="id1" href="#">Mi Posicion</a>
+                        </li>
+                        <li>
+                            <a id="id2" href="#">Mi Combustible</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Renders -->
+    <div id="list" class="row-fluid">
+        <div class="span12">Lista</div>
+    </div>
+
+    <div id="map" class="row-fluid">
+        <div id="map_canvas" class="span12">Mapa</div>
+    </div>
+
+    <!-- foot navbar -->
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="#" onclick="javascript:showOption('#id0');">Mi Lugar</a></li>
+          <li><a href="#" onclick="javascript:showOption('#id1');">Mi Posicion</a></li>
+          <li><a href="#" onclick="javascript:showOption('#id2');">Mi Combustible</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="lib/jquery/jquery-1.7.2.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-resource.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <script src="js/MapsAndMarkers.js"></script>
+    <script src="js/sliding.form.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=weather"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+</body>
+</html>
