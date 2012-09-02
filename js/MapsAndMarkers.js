@@ -4,16 +4,15 @@ markerObject = (function (){
 
         var thePosition = (!options.position)? new google.maps.LatLng(options.lat, options.lng):options.position;
 
-        var myOptions = {
-            //position: options.position,
+        this.markerInstance = new MarkerWithLabel({
             position: thePosition,
-            draggable: options.draggable,
+            icon: icoResolutor(options.icon),
             map: options.objMap.mapInstance,
-            icon: icoResolutor(options.icon), //we use a method to resolve and abstract the icons by type
-            title: options.title
-        };
-
-        this.markerInstance = new google.maps.Marker(myOptions);
+            labelContent: options.title,
+            labelAnchor: new google.maps.Point(22, 0),
+            labelClass: "labels", // the CSS class for the label
+            labelStyle: {opacity: 0.75}
+        });
     }
 
     //For register the events

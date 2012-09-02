@@ -13,6 +13,16 @@ html, body {
     left: 0;
     right: 0;
 }
+.labels {
+    color: #000000;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: 45px;
+    border: 2px solid black;
+    white-space: nowrap;
+}
 #content{
     position: inherit;
     z-index: 1000;

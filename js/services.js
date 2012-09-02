@@ -79,7 +79,7 @@ markerCreator = function (dato,objMap){
         draggable: false,
         objMap: objMap,
         icon: dato.tipo,
-        title: dato.tipo+" : "+ dato.alias
+        title: dato.alias
     };// retriving and matching the especific options for this marker
 
     console.log (myOptions);

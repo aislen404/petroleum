@@ -84,7 +84,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                                 tipo : 'barata',
                                 precio: $(this).find('precio').text()+' €',
                                 rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' €',
                                 lat : $(this).find('y').text(),
                                 lng : $(this).find('x').text()
                             };
@@ -93,7 +93,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                                 tipo : 'cara',
                                 precio: $(this).find('precio').text()+' €',
                                 rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' €',
                                 lat : $(this).find('y').text(),
                                 lng : $(this).find('x').text()
                             };
@@ -102,7 +102,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                                 tipo : 'Gasolinera',
                                 precio: $(this).find('precio').text()+' €',
                                 rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' € '+$(this).find('rotulo').text(),
+                                alias : $(this).find('precio').text()+' €',
                                 lat : $(this).find('y').text(),
                                 lng : $(this).find('x').text()
                             };
