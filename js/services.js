@@ -34,8 +34,8 @@ module.factory('poiServiceCreator',function (){
         //Gaz Stations cluster
         createGazCluster: function (arrayOfMarkers,objMap){
             var myOptions = {
-                gridSize: 100,
-                maxZoom: 14,
+                gridSize: 50,
+                maxZoom: 12,
                 styles: [{
                     url: 'img/m1.png',
                     height: 53,
