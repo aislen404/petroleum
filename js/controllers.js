@@ -9,7 +9,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
 
 // --------- initialization of model-view bindings  --------- \\
     //the dataset
-    $scope.datos = [];
     $scope.gasolina_type=0;
 
     // map object
@@ -47,11 +46,14 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
         try {
             $scope.gasolinaCluster.clearMarkers();
             $scope.gasolinaCluster=[];
+            clearTable();
         }catch(e){} //clearMarkers is a method of MarkerCluster
 
         if($scope.gasolina_type !=0 ){
             var URI = 'dataModels/mitycProxy.php?tipo='+$scope.gasolina_type;
             var arryOfMarkers = [];
+            $scope.datos = [];
+
             $.ajax({
                 type: 'GET',
                 url: URI,
@@ -76,6 +78,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                             lng : $(this).find('x').text()
                         };
 
+                        addRow(theData);
                         $scope.datos.push(theData);
                         arryOfMarkers.push(markerCreator(theData,$scope.mapObj.mapInstance));
 
@@ -96,7 +99,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                     });
 
                     $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
-                    $scope.datos = JSON.stringify($scope.datos);
+                    $scope.datos= angular.toJson($scope.datos);
 
                     $('#datos').html($scope.datos);
 
@@ -110,3 +113,18 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
         }
     };
 });
+
+function addRow (data) {
+
+    var tds ='<tr>';
+    tds += '<td>'+data.rotulo+'</td>';
+    tds += '<td>'+data.precio+'</td>';
+    tds += '<td>'+data.lat+'</td>';
+    tds += '<td>'+data.lng+'</td>';
+    tds+='</tr>';
+
+    $('#tabla tbody').append(tds);
+}
+function clearTable (){
+    $('#tabla tbody').html('');
+}

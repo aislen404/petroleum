@@ -33,7 +33,7 @@ mapObject = (function() {
 
         var theLat = 40.418889;     // Madrid City Center Latitude
         var theLong = -3.691944;    // Madrid City Center Longitude
-        this.theZoom = 9;            // First Zoom
+        this.theZoom = 14;            // First Zoom
 
         this.theMap = document.getElementById('map_canvas');                    //map div id
 

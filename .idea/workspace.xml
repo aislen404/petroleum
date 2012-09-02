@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
     </list>
     <ignored path="petroleum.iws" />
@@ -25,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="34" selection-start="5034" selection-end="5034" vertical-scroll-proportion="0.651289">
+            <state line="99" column="43" selection-start="4463" selection-end="4463" vertical-scroll-proportion="-61.875">
               <folding />
             </state>
           </provider>
@@ -37,7 +38,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="32" selection-start="3443" selection-end="3443" vertical-scroll-proportion="0.0">
+            <state line="104" column="0" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -56,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapsAndMarkers.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MapsAndMarkers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="30" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0">
+            <state line="35" column="25" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.62015504">
               <folding />
             </state>
           </provider>
@@ -73,9 +74,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
       </list>
     </option>
   </component>
@@ -211,7 +212,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.8926342" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982357" sideWeight="0.8926342" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -291,9 +292,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
+    <entry file="file://$PROJECT_DIR$/dataModels/mitycProxy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="30" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0">
+        <state line="7" column="193" selection-start="148" selection-end="454" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -307,25 +308,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataModels/mitycProxy.php">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="193" selection-start="148" selection-end="454" vertical-scroll-proportion="0.0">
+        <state line="99" column="43" selection-start="4463" selection-end="4463" vertical-scroll-proportion="-61.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="32" selection-start="3443" selection-end="3443" vertical-scroll-proportion="0.0">
+        <state line="104" column="0" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="34" selection-start="5034" selection-end="5034" vertical-scroll-proportion="0.651289">
+        <state line="35" column="25" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.62015504">
           <folding />
         </state>
       </provider>
