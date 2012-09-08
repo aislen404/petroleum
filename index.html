@@ -19,17 +19,13 @@
     <!-- top navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <a class="brand" href="#">Petroleum - V 0.0.8</a>
+            <a class="h1 small" href="#">V 0.0.9</a>
             <ul class="nav">
-                <li class="divider-vertical"></li>
-                <li><a href="#" onclick="showRender('#list')">Lista</a></li>
-                <li><a href="#" onclick="showRender('#map')">Mapa</a></li>
-                <li class="divider-vertical"></li>
-                <li><a href="#" ng-click="gasToogle()">Refresh</a></li>
-                <li class="divider-vertical"></li>
-                <li><a href="#" onclick="showOption('#id0')">Lugar</a></li>
-                <li><a href="#" onclick="showOption('#id1')">Posicion</a></li>
-                <li><a href="#" onclick="showOption('#id2')">Combustible</a></li>
+                <li><a href="#" class="mapa" onclick="showRender(this)"></a></li>
+                <li><a href="#" class="refresh" ng-click="gasToogle()"></a></li>
+                <li><a href="#" class="lugar" onclick="showOption('#id0')"></a></li>
+                <li><a href="#" class="posicion" onclick="showOption('#id1')"></a></li>
+                <li><a href="#" class="combustible" onclick="showOption('#id2')"></a></li>
             </ul>
         </div>
     </div>
@@ -91,13 +87,13 @@
                         <div id="navigation">
                             <ul>
                                 <li class="selected">
-                                    <a id="id0" href="#">Mi Lugar</a>
+                                    <a id="id0" class="lugar" href="#"></a>
                                 </li>
                                 <li>
-                                    <a id="id1" href="#">Mi Posicion</a>
+                                    <a id="id1" class="posicion" href="#"></a>
                                 </li>
                                 <li>
-                                    <a id="id2" href="#">Mi Combustible</a>
+                                    <a id="id2" class="combustible" href="#"></a>
                                 </li>
                             </ul>
                         </div>
@@ -152,6 +148,6 @@
     <script src="js/controllers.js"></script>
 
     <script src="js/MapsAndMarkers.js"></script>
-    <script src="js/sliding.form.js"></script>
+    <script src="js/jqueryScrips.js"></script>
 </body>
 </html>

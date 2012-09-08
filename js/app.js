@@ -12,7 +12,8 @@
     });
 
     app.run (function ($rootScope){
-
+            initJqueryScripts();
+            slidingForm();
         return true;
     });
 

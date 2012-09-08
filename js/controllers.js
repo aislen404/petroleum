@@ -74,39 +74,28 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
                     var cheapOption;
                     var gasolinera;
                     var theData;
+                    var tipo;
                     $scope.datos = [];
 
                     $(data).find('elemento').each(function()
                     {
 
                         if(i==1){
-                            theData = {
-                                tipo : 'barata',
-                                precio: $(this).find('precio').text()+' €',
-                                rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' €',
-                                lat : $(this).find('y').text(),
-                                lng : $(this).find('x').text()
-                            };
+                            tipo = 'barata';
                         }else if(i==$(data).find('elemento').length){
-                            theData = {
-                                tipo : 'cara',
-                                precio: $(this).find('precio').text()+' €',
-                                rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' €',
-                                lat : $(this).find('y').text(),
-                                lng : $(this).find('x').text()
-                            };
+                            tipo = 'cara';
                         }else{
-                            theData = {
-                                tipo : 'Gasolinera',
-                                precio: $(this).find('precio').text()+' €',
-                                rotulo: $(this).find('rotulo').text(),
-                                alias : $(this).find('precio').text()+' €',
-                                lat : $(this).find('y').text(),
-                                lng : $(this).find('x').text()
-                            };
+                            tipo = 'Gasolinera';
                         }
+
+                        theData = {
+                            tipo : tipo,
+                            precio: $(this).find('precio').text()+' €',
+                            rotulo: $(this).find('rotulo').text(),
+                            alias : $(this).find('precio').text()+' €',
+                            lat : $(this).find('y').text(),
+                            lng : $(this).find('x').text()
+                        };
 
                         addRow(theData);
                         $scope.datos.push(theData);
