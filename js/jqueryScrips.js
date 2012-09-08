@@ -1,13 +1,8 @@
-$(function() {
+function slidingForm () {
 
     var current = 1;
 	var stepsWidth = 0;
     var widths = [];
-
-    $('#myModal').modal('toggle');
-    $('#myModal').modal('hide');
-
-    $('#list').hide();
 
     $('#steps .step').each(function(i){
         var $step 		= $(this);
@@ -40,24 +35,19 @@ $(function() {
 			return false;
 		}	
 	});
-});
+}
+
+function initJqueryScripts (){
+    $('#myModal').hide();
+    $('#list').hide();
+}
+
 
 function showOption (x){
     $('#myModal').modal('toggle');
-    $('#myModal').modal('show');
     $(x).click();
 }
-function showRender (x){
-    if(x == '#list'){
-        $('#list').show();
-        $('#list').addClass('selected');
-        $('#map').hide();
-        $('#map').removeClass('selected');
-    }else{
-        $('#list').hide();
-        $('#list').removeClass('selected');
-        $('#map').show();
-        $('#map').addClass('selected');
-    }
-
+function showRender (){
+    $('#list').toggle();
+    $('#map').toggle();
 }
