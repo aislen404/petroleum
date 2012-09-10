@@ -30,11 +30,18 @@ html, body {
     height: 36px;
     width: 36px;
 }
-.lugar {
-    background:transparent url(../img/publish.png) no-repeat;
+.geopos {
+    background:transparent url(../img/satelite_36.png) no-repeat;
     height: 36px;
     width: 36px;
 }
+.gas{
+    background:transparent url(../img/gas_36.png) no-repeat;
+    height: 34px;
+    width: 36px;
+    margin-top: 2px;
+}
+
 .ico-prov-form {
     background:transparent url(../img/pushpin.png) no-repeat;
     background-repeat: no-repeat;
@@ -46,7 +53,7 @@ html, body {
     width: 16px;
 }
 .ico-geopos-form {
-    background:transparent url(../img/satelite.png) no-repeat;
+    background:transparent url(../img/satelite_24.png) no-repeat;
     background-repeat: no-repeat;
     display: inline-block;
     height: 25px;
@@ -57,7 +64,7 @@ html, body {
 }
 
 .ico-gas-form {
-    background:transparent url(../img/gas.png) no-repeat;
+    background:transparent url(../img/gas_24.png) no-repeat;
     background-repeat: no-repeat;
     display: inline-block;
     height: 24px;

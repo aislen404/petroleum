@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/gas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/pushpin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/satelite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forms.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forms_modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pruebas.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/special-offer.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/order.png" afterPath="$PROJECT_DIR$/img/order.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/publish.png" afterPath="$PROJECT_DIR$/img/publish.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/refresh.png" afterPath="$PROJECT_DIR$/img/refresh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/user.png" afterPath="$PROJECT_DIR$/img/user.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/world.png" afterPath="$PROJECT_DIR$/img/world.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/gas_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/gas_36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/satelite_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/satelite_36.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/gas.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/satelite.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/css/bootstrap-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms_modal.html" afterPath="$PROJECT_DIR$/forms_modal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jqueryScrips.js" afterPath="$PROJECT_DIR$/js/jqueryScrips.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services.js" afterPath="$PROJECT_DIR$/js/services.js" />
     </list>
     <ignored path="petroleum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="forms_modal.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="forms_modal.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms_modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="128" selection-start="8860" selection-end="8860" vertical-scroll-proportion="1.130624">
+            <state line="26" column="42" selection-start="1379" selection-end="1379" vertical-scroll-proportion="31.8">
               <folding />
             </state>
           </provider>
@@ -57,8 +46,10 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="20" selection-start="1402" selection-end="1411" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="145" column="25" selection-start="4831" selection-end="4831" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#846#1452#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +69,16 @@
       <file leaf-file-name="MapsAndMarkers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="3083" selection-end="3083" vertical-scroll-proportion="0.0">
+            <state line="57" column="24" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geolocationmarker-compiled.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker-compiled.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="300" selection-start="331" selection-end="332" vertical-scroll-proportion="0.021037867">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="1" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0">
+            <state line="41" column="20" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,13 +140,14 @@
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/bootstrap-responsive.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/jqueryScrips.js" />
-        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
         <option value="$PROJECT_DIR$/js/services.js" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/forms_modal.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
+        <option value="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker-compiled.js" />
       </list>
     </option>
   </component>
@@ -302,7 +303,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
   </component>
   <component name="PublishConfig">
@@ -453,13 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="1" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="23" selection-start="1543" selection-end="1543" vertical-scroll-proportion="-1.5440977">
@@ -491,23 +485,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="3083" selection-end="3083" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="20" selection-start="1402" selection-end="1411" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="145" column="25" selection-start="4831" selection-end="4831" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#846#1452#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forms_modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="128" selection-start="8860" selection-end="8860" vertical-scroll-proportion="1.130624">
+        <state line="26" column="42" selection-start="1379" selection-end="1379" vertical-scroll-proportion="31.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="20" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="24" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker-compiled.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="300" selection-start="331" selection-end="332" vertical-scroll-proportion="0.021037867">
           <folding />
         </state>
       </provider>

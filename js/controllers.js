@@ -24,6 +24,8 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
     // Main function in ng-init
     $scope.BeganToBegin = function (){
         $scope.initJqueryScripts();
+        $scope.showLocalizacionOptions();
+        $scope.showCombustibleOptions();
         $scope.createMap();
         $scope.gasToggle();
 
@@ -48,8 +50,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
 
     // Gas control
     $scope.gasToggle = function (){
-
-        $scope.showOptions();
 
         try {
             $scope.gasolinaCluster.clearMarkers();
@@ -143,9 +143,14 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
         $('#list').hide();
     };
 
-    $scope.showOptions = function (){
-        $('#myModal').toggle();
+    $scope.showLocalizacionOptions = function (){
+        $('#myModalLocalizacion').toggle();
     };
+
+    $scope.showCombustibleOptions = function (){
+        $('#myModalCombustible').toggle();
+    };
+
 
     $scope.renderToggle = function (el){
         renderToggle_view ('btn_renderToggle');

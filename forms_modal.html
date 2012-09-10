@@ -23,25 +23,26 @@
             <ul class="nav pull-right">
                 <li><a href="#" id="btn_renderToggle" class="mapa" ng-click="renderToggle()"></a></li>
                 <li><a href="#" class="refresh" ng-click="gasToggle()"></a></li>
-                <li><a href="#" class="lugar" ng-click="showOptions()"></a></li>
+                <li><a href="#" class="geopos" ng-click="showLocalizacionOptions()"></a></li>
+                <li><a href="#" class="gas" ng-click="showCombustibleOptions()"></a></li>
             </ul>
         </div>
     </div>
 
     <!-- forms -->
-    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal" id="myModalLocalizacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
-            <h3>Filtros</h3>
+            <h3>Localización</h3>
         </div>
         <div class="modal-body">
-            <form id="formFiltros" class="form-horizontal">
+            <form id="formLocalizacion" class="form-horizontal">
                 <fieldset>
                     <legend><i class="ico-prov-form"></i> Provincias</legend>
                     <div class="control-group">
                         <label for="select_idprovincia" class="control-label">Selecciona la:</label>
                         <div class="controls">
                             <select id="select_idprovincia" class="input-medium">
-                                <option value="">- Provincia -</option>
+                                <option value="0" selected>- Provincia -</option>
                                 <option value="15">A coru&#241;a</option>
                                 <option value="1">&#193;lava</option>
                                 <option value="2">Albacete</option>
@@ -144,14 +145,25 @@
                     </div>
         
                 </fieldset>
-        
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="myModalCombustible" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <h3>Combustibles: </h3>
+        </div>
+        <div class="modal-body">
+            <form id="formCombustible" class="form-horizontal">
                 <fieldset>
                     <legend><i class="ico-gas-form"></i> Mi Combustible</legend>
                     <div class="control-group">
                         <label for="select_combustible" class="control-label">Selecciona el:</label>
                         <div class="controls">
                             <select id="select_combustible" class="input-medium" ng-model="gasolina_type" ng-change="gasToggle()">
-                                <option value="0">-Combustible-</option>
+                                <option value="0" selected>-Combustible-</option>
                                 <option value="1">Gasolina 95</option>
                                 <option value="2">Gasolina 97</option>
                                 <option value="3">Gasolina 98</option>
@@ -165,7 +177,7 @@
                     </div>
                 </fieldset>
                 <div class="form-actions">
-                  <button type="submit" class="btn btn-primary" ng-click="showOptions()" >Ok</button>
+                  <button type="submit" class="btn btn-primary" ng-click="showCombustibleOptions()" >Ok</button>
                 </div>
             </form>
         </div> 
