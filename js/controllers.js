@@ -5,7 +5,7 @@ var module;
 
 module = angular.module ('petroleum_app.controllers',[]);
 
-module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServiceProvider,poiServiceCreator) {
+module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServiceProvider,geoMarkerServiceProvider,poiServiceCreator) {
 
 // --------- initialization of model-view bindings  --------- \\
     //the dataset
@@ -14,13 +14,18 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
     // map object
     $scope.mapObj = null;
 
+    //geoposicion
+    $scope.geopos = false;
+    $scope.geoPosObj = null;
+
     //Gasolina
     $scope.gasolinaCluster=[];
 
     // Main function in ng-init
     $scope.BeganToBegin = function (){
+        $scope.initJqueryScripts();
         $scope.createMap();
-        $scope.gasToogle();
+        $scope.gasToggle();
 
     };
     // Control the creation of map
@@ -42,7 +47,9 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
     };
 
     // Gas control
-    $scope.gasToogle = function (){
+    $scope.gasToggle = function (){
+
+        $scope.showOptions();
 
         try {
             $scope.gasolinaCluster.clearMarkers();
@@ -129,6 +136,28 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,dataServ
 
                 }
             });
+        }
+    };
+
+    $scope.initJqueryScripts = function (){
+        $('#list').hide();
+    };
+
+    $scope.showOptions = function (){
+        $('#myModal').toggle();
+    };
+
+    $scope.renderToggle = function (el){
+        renderToggle_view ('btn_renderToggle');
+    };
+
+    $scope.positionControl = function (){
+        if($scope.mapObj.mapInstance){
+            if($scope.geopos){
+                $scope.geoPosObj = geoMarkerServiceProvider.activate($scope.mapObj.mapInstance);
+            }else{
+                $scope.geoPosObj = null;
+            }
         }
     };
 });

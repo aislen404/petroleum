@@ -18,11 +18,34 @@ markerObject = (function (){
     //For register the events
     markerObject.prototype.registerMapEvent = function (ev,callBack){
         return google.maps.event.addListener(this.markerInstance, ev ,callBack);
-    }
+    };
 
     return markerObject;
 
 }).call(this);
+
+geoMarker = ( function (){
+    function geoMarker (objMap){
+
+        this.geoMarker = new GeolocationMarker();
+        this.geoMarker.setCircleOptions({fillColor: '#808080'});
+
+        google.maps.event.addListenerOnce(this.geoMarker, 'position_changed', function() {
+            objMap.setCenter(this.getPosition());
+            objMap.fitBounds(this.getBounds());
+        });
+
+        google.maps.event.addListener(this.geoMarker, 'geolocation_error', function(e) {
+            alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        this.geoMarker.setMap(objMap);
+    }
+
+    return geoMarker;
+
+}).call(this);
+
 
 //The Map
 mapObject = (function() {
@@ -68,22 +91,6 @@ mapObject = (function() {
 
         //the instance of the map
         this.mapInstance = new google.maps.Map(this.theMap,myOptions);
-
-        var map = this.mapInstance;
-
-        GeoMarker = new GeolocationMarker();
-        GeoMarker.setCircleOptions({fillColor: '#808080'});
-
-        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-            map.setCenter(this.getPosition());
-            map.fitBounds(this.getBounds());
-        });
-
-        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-            alert('There was an error obtaining your position. Message: ' + e.message);
-        });
-
-        GeoMarker.setMap(map);
 
     }
 

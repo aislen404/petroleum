@@ -16,6 +16,20 @@ module.factory('mapServiceProvider', function (){
     return mapa;                            //returning the google map object
 });
 
+// --------- THE GEOPOSITION  --------- \\
+//These service create the map and trigger the geolocalization on.
+module.factory('geoMarkerServiceProvider', function (){
+    return {
+        activate: function (objMap){
+            return geoMarker(objMap);
+        },
+        deactivate: function (geoM){
+
+        }
+    };
+});
+
+
 // --------- THE DATASETS  --------- \\
 //These service only get data for the data sets, is AngularJS 100%
 module.factory('dataServiceProvider', function ($resource){

@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
 }
-#map_canvas {
+#map_canvas,#list {
     /*
     width: 100%;
     height: 100%;
@@ -13,16 +13,7 @@ html, body {
     left: 0;
     right: 0;
 }
-.labels {
-    color: #000000;
-    background-color: white;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    width: 45px;
-    border: 2px solid black;
-    white-space: nowrap;
-}
+
 .mapa {
     background:transparent url(../img/world.png) no-repeat;
     height: 36px;
@@ -44,201 +35,38 @@ html, body {
     height: 36px;
     width: 36px;
 }
-.posicion {
-    background:transparent url(../img/user.png) no-repeat;
-    height: 36px;
-    width: 36px;
+.ico-prov-form {
+    background:transparent url(../img/pushpin.png) no-repeat;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 16px;
 }
-.combustible {
-    background:transparent url(../img/special-offer.png) no-repeat;
-    height: 36px;
-    width: 36px;
-}
-#content{
-    position: inherit;
-    z-index: 1000;
-}
-#wrapper{
-    -moz-box-shadow:0px 0px 3px #aaa;
-    -webkit-box-shadow:0px 0px 3px #aaa;
-    box-shadow:0px 0px 3px #aaa;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border-radius:10px;
-    border:2px solid #fff;
-    background-color:#f9f9f9;
-    width:100%;
-    overflow:hidden;
-}
-#steps{
-    width:600px;
-	/*height:320px;*/
-    overflow:hidden;
-}
-.step{
-    float:left;
-    width:600px;
-	/*height:320px;*/
-}
-#navigation{
-    height:32px;
-    background-color:#e9e9e9;
-    border-top:1px solid #fff;
-    -moz-border-radius:0px 0px 10px 10px;
-    -webkit-border-bottom-left-radius:10px;
-    -webkit-border-bottom-right-radius:10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-}
-#navigation ul{
-    list-style:none;
-	float:left;
-	margin-left:22px;
-}
-#navigation ul li{
-	float:left;
-    border-right:1px solid #ccc;
-    border-left:1px solid #ccc;
-    position:relative;
-	margin:0px 2px;
-}
-#navigation ul li a{
-    display:block;
-    height:32px;
-    background-color:#f0f0f0;
-    color:#777;
-    outline:none;
-    font-weight:bold;
-    text-decoration:none;
-    line-height:30px;
-    padding:0px 2px;
-    border-right:1px solid #fff;
-    border-left:1px solid #fff;
-    width: 30px;
-}
-#navigation ul li a:hover,
-#navigation ul li.selected a{
-    background-color:#d8d8d8;
-    color:#666;
-    text-shadow:1px 1px 1px #fff;
-    width: 30px;
-}
-span.checked{
-    background:transparent url(../img/checked.png) no-repeat top left;
-    position:absolute;
-    top:0px;
-    left:1px;
-    width:20px;
-    height:20px;
-}
-span.error{
-    background:transparent url(../img/error.png) no-repeat top left;
-    position:absolute;
-    top:0px;
-    left:1px;
-    width:20px;
-    height:20px;
-}
-#steps form fieldset{
-    border:none;
-    padding-bottom:20px;
-}
-#steps form legend{
-    text-align:left;
-    background-color:#f0f0f0;
-    color:#666;
-    font-size:20px;
-    text-shadow:1px 1px 1px #fff;
-    font-weight:bold;
-    float:left;
-    width:590px;
-    padding:5px 0px 5px 10px;
-    margin:10px 0px;
-    border-bottom:1px solid #fff;
-    border-top:1px solid #d9d9d9;
-}
-#steps form p{
-    float:left;
-    clear:both;
-    margin:5px 0px;
-    background-color:#f4f4f4;
-    border:1px solid #fff;
-    width:400px;
-    padding:10px;
-    margin-left:100px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow:0px 0px 3px #aaa;
-    -webkit-box-shadow:0px 0px 3px #aaa;
-    box-shadow:0px 0px 3px #aaa;
-}
-#steps form p label{
-    width:160px;
-    float:left;
-    text-align:right;
-    margin-right:15px;
-    line-height:26px;
-    color:#666;
-    text-shadow:1px 1px 1px #fff;
-    font-weight:bold;
-}
-#steps form input:not([type=radio]),
-#steps form textarea,
-#steps form select{
-    background: #ffffff;
-    border: 1px solid #ddd;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    outline: none;
-    padding: 5px;
-    width: 200px;
-    float:left;
-}
-#steps form input:focus{
-    -moz-box-shadow:0px 0px 3px #aaa;
-    -webkit-box-shadow:0px 0px 3px #aaa;
-    box-shadow:0px 0px 3px #aaa;
-    background-color:#FFFEEF;
-}
-#steps form p.submit{
-    background:none;
-    border:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    box-shadow:none;
-}
-#steps form button {
-	border:none;
-	outline:none;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    color: #ffffff;
-    display: block;
-    cursor:pointer;
-    margin: 0px auto;
-    clear:both;
-    padding: 7px 25px;
-    text-shadow: 0 1px 1px #777;
-    font-weight:bold;
-    font-family:"Century Gothic", Helvetica, sans-serif;
-    font-size:22px;
-    -moz-box-shadow:0px 0px 3px #aaa;
-    -webkit-box-shadow:0px 0px 3px #aaa;
-    box-shadow:0px 0px 3px #aaa;
-    background:#4797ED;
-}
-#steps form button:hover {
-    background:#d8d8d8;
-    color:#666;
-    text-shadow:1px 1px 1px #fff;
+.ico-geopos-form {
+    background:transparent url(../img/satelite.png) no-repeat;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 24px;
 }
 
-#list{
-    margin-top: 22px;
+.ico-gas-form {
+    background:transparent url(../img/gas.png) no-repeat;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 24px;
 }
+
 #myModal{
     overflow: visible;
 }
