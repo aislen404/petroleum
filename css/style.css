@@ -16,8 +16,8 @@ html, body {
 
 .mapa {
     background:transparent url(../img/world_36.png) no-repeat;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 22px;
 }
 
 .lista {
@@ -27,24 +27,28 @@ html, body {
 }
 .refresh{
     background:transparent url(../img/refresh_36.png) no-repeat;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 16px;
 }
 .geopos {
     background:transparent url(../img/satelite_36.png) no-repeat;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 18px;
 }
 .gas{
     background:transparent url(../img/gas_36.png) no-repeat;
-    height: 34px;
-    width: 36px;
-    margin-top: 2px;
+    height: 28px;
+    width: 22px;
+}
+.gas-load{
+    background:transparent url(../img/gas_36_load.png) no-repeat;
+    height: 28px;
+    width: 22px;
 }
 .route{
     background:transparent url(../img/sign_36.png) no-repeat;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 22px;
 }
 
 .ico-prov-form {

@@ -77,6 +77,10 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
         if($scope.gasolina_type !=0 ){
 
+            $scope.showCombustibleOptions();
+
+            $('#gas_ctrl').attr('class','gas-load');
+
             var latNS = $scope.mapObj.getLatNS();
             var lngNS = $scope.mapObj.getLongNS();
             var latSW = $scope.mapObj.getLatSW();
@@ -145,13 +149,12 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                     $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
                     $scope.datos= angular.toJson($scope.datos);
 
-                    $('#datos').html($scope.datos);
-
                     console.log('Gasolineras',i-1);
                     console.log('cheapOption',cheapOption);
                     console.log('expensiveOption',expensiveOption);
                     console.log($scope.datos);
 
+                    $('#gas_ctrl').attr('class','gas');
                 }
             });
         }
