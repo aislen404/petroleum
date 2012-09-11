@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/order_36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/pushpin_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/refresh_36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sign_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sign_36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/user_24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/user_36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/world_36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/RouteBoxer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/RouteBoxer_packed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker-exports.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/order.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/publish.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/pushpin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/world.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/default.png" afterPath="$PROJECT_DIR$/img/default.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/forms_modal.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms_modal.html" afterPath="$PROJECT_DIR$/forms_modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jqueryScrips.js" afterPath="$PROJECT_DIR$/js/jqueryScrips.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services.js" afterPath="$PROJECT_DIR$/js/services.js" />
     </list>
     <ignored path="petroleum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,15 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="forms_modal.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms_modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="101" selection-start="8053" selection-end="8053" vertical-scroll-proportion="2.7679782">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,6 +38,15 @@
                 <element signature="e#5587#5639#0" expanded="false" />
                 <element signature="e#5681#5736#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="46" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.42740843">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -277,7 +253,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
   </component>
   <component name="PublishConfig">
@@ -335,8 +311,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19830628" sideWeight="0.31835207" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.6004994" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.670412" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39950064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19830628" sideWeight="0.6641698" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -346,7 +323,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -428,11 +404,6 @@
         <state line="15" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.29069766" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="23" selection-start="1543" selection-end="1543" vertical-scroll-proportion="-1.5440977" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4783" column="12" selection-start="93016" selection-end="93016" vertical-scroll-proportion="0.0" />
@@ -442,21 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="46" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="337" column="0" selection-start="12062" selection-end="12062" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1375#1981#0" expanded="false" />
-            <element signature="e#2037#5253#0" expanded="false" />
-            <element signature="e#5298#5332#0" expanded="false" />
-            <element signature="e#5384#5435#0" expanded="false" />
-            <element signature="e#5485#5535#0" expanded="false" />
-            <element signature="e#5587#5639#0" expanded="false" />
-            <element signature="e#5681#5736#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -495,9 +451,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms_modal.html">
+    <entry file="file://$PROJECT_DIR$/lib/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="101" selection-start="8053" selection-end="8053" vertical-scroll-proportion="2.7679782">
+        <state line="8530" column="21" selection-start="274757" selection-end="274757" vertical-scroll-proportion="2.7464788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="337" column="0" selection-start="12062" selection-end="12062" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1375#1981#0" expanded="false" />
+            <element signature="e#2037#5253#0" expanded="false" />
+            <element signature="e#5298#5332#0" expanded="false" />
+            <element signature="e#5384#5435#0" expanded="false" />
+            <element signature="e#5485#5535#0" expanded="false" />
+            <element signature="e#5587#5639#0" expanded="false" />
+            <element signature="e#5681#5736#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="46" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.42740843">
           <folding />
         </state>
       </provider>
