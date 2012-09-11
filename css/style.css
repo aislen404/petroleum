@@ -15,18 +15,18 @@ html, body {
 }
 
 .mapa {
-    background:transparent url(../img/world.png) no-repeat;
+    background:transparent url(../img/world_36.png) no-repeat;
     height: 36px;
     width: 36px;
 }
 
 .lista {
-    background:transparent url(../img/order.png) no-repeat;
+    background:transparent url(../img/order_36.png) no-repeat;
     height: 36px;
     width: 36px;
 }
 .refresh{
-    background:transparent url(../img/refresh.png) no-repeat;
+    background:transparent url(../img/refresh_36.png) no-repeat;
     height: 36px;
     width: 36px;
 }
@@ -41,9 +41,14 @@ html, body {
     width: 36px;
     margin-top: 2px;
 }
+.route{
+    background:transparent url(../img/sign_36.png) no-repeat;
+    height: 36px;
+    width: 36px;
+}
 
 .ico-prov-form {
-    background:transparent url(../img/pushpin.png) no-repeat;
+    background:transparent url(../img/pushpin_24.png) no-repeat;
     background-repeat: no-repeat;
     display: inline-block;
     height: 24px;
@@ -72,6 +77,26 @@ html, body {
     margin-top: 1px;
     vertical-align: text-top;
     width: 24px;
+}
+.ico-route-form {
+    background:transparent url(../img/sign_24.png) no-repeat;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 24px;
+}
+.ico-user-form {
+    background:transparent url(../img/user_24.png) no-repeat;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 19px;
 }
 
 #myModal{

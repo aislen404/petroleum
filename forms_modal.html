@@ -25,6 +25,7 @@
                 <li><a href="#" class="refresh" ng-click="gasToggle()"></a></li>
                 <li><a href="#" class="geopos" ng-click="showLocalizacionOptions()"></a></li>
                 <li><a href="#" class="gas" ng-click="showCombustibleOptions()"></a></li>
+                <li><a href="#" class="route" ng-click="showRoutePlanningOptions()"></a></li>
             </ul>
         </div>
     </div>
@@ -32,7 +33,7 @@
     <!-- forms -->
     <div class="modal" id="myModalLocalizacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
-            <h3>Localización</h3>
+            <h3><i class="ico-geopos-form"></i> Localización</h3>
         </div>
         <div class="modal-body">
             <form id="formLocalizacion" class="form-horizontal">
@@ -41,7 +42,7 @@
                     <div class="control-group">
                         <label for="select_idprovincia" class="control-label">Selecciona la:</label>
                         <div class="controls">
-                            <select id="select_idprovincia" class="input-medium">
+                            <select id="select_idprovincia" class="input-medium uneditable-input">
                                 <option value="0" selected>- Provincia -</option>
                                 <option value="15">A coru&#241;a</option>
                                 <option value="1">&#193;lava</option>
@@ -102,7 +103,7 @@
                 </fieldset>
         
                 <fieldset>
-                    <legend><i class="ico-geopos-form"></i> Mi Posicion</legend>
+                    <legend><i class="ico-user-form"></i> Mi Posicion</legend>
         
                     <div class="control-group">
                         <label for="checkbox_geoposicionamiento" class="control-label">Geoposición?:</label>
@@ -110,7 +111,7 @@
                             <input type="checkbox" id="checkbox_geoposicionamiento" ng-model="geopos" ng-change="positionControl()"/>
                         </div>
                     </div>
-        
+<!--
                     <div id="alert_checkbox_geoposicionamiento" class="alert alert-info">
 						<button type="button" class="close" data-dismiss="alert">×</button>
                         <h4>Posicionando</h4>
@@ -129,36 +130,37 @@
                         <h4>¡ Error !</h4>
                         Por algun motivo no podemos geoposicionarte !!!
                     </div>
-        
+-->
                     <div class="control-group">
                         <label for="input_range" class="control-label">Radio: </label>
                         <div class="controls">
-                            <input id="input_range" type="number" class="input-small" min="1000" max="100000" step="500" value="1000" onChange="javascript:output_range.value=(parseInt(input_range.value)/1000)+'Km';"/>
+                            <input id="input_range" type="number" class="input-small uneditable-input" min="1000" max="100000" step="500" value="1000" onChange="javascript:output_range.value=(parseInt(input_range.value)/1000)+'Km';"/>
                             <output id="output_range" for="input_range"></output>
                         </div>
                     </div>
-        
+<!--
                     <div id="alert_input_range" class="alert alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         <h4>¡ Cuidado !</h4>
                         Un radio demasiado amplio tendra muchos elementos y tardara más...
                     </div>
-        
+-->
                 </fieldset>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
-                </div>
+                <p>
+                    <button type="submit" class="btn btn-block btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
+                </p>
             </form>
         </div>
     </div>
+
     <div class="modal" id="myModalCombustible" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
-            <h3>Combustibles: </h3>
+            <h3><i class="ico-gas-form"></i> Mi Combustible</h3>
         </div>
         <div class="modal-body">
             <form id="formCombustible" class="form-horizontal">
                 <fieldset>
-                    <legend><i class="ico-gas-form"></i> Mi Combustible</legend>
+                    <legend><small>Selecciona tu tipo de gasolina</small></legend>
                     <div class="control-group">
                         <label for="select_combustible" class="control-label">Selecciona el:</label>
                         <div class="controls">
@@ -176,13 +178,62 @@
                         </div>
                     </div>
                 </fieldset>
-                <div class="form-actions">
-                  <button type="submit" class="btn btn-primary" ng-click="showCombustibleOptions()" >Ok</button>
-                </div>
+                <p>
+                  <button type="submit" class="btn btn-block btn-primary" ng-click="showCombustibleOptions()" >Ok</button>
+                </p>
             </form>
         </div> 
     </div>
 
+    <div class="modal" id="myModalRoutePlanning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="showRoutePlanningOptions()">×</button>
+            <h3><i class="ico-route-form"></i> Route Planning: </h3>
+        </div>
+        <div class="modal-body">
+            <form id="formRoutePlanning" class="form-horizontal">
+                <fieldset>
+
+                    <legend><small>Crea tu ruta, maximo 9 puntos intermedios</small></legend>
+
+                    <div class="control-group">
+                        <label for="route_mode" class="control-label">Modo</label>
+                        <div class="controls">
+                            <select id="route_mode"class="input-medium" ng-model="route_mode" ng-change="updateRoute()">
+                                <option value="driving">Conduciendo</option>
+                                <option value="walking">Andando</option>
+                                <option value="bicycling">Bicicleta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="route_highways" class="control-label">Autopistas</label>
+                        <div class="controls">
+                            <input id="route_highways" type="checkbox" ng-model="route_highways" ng-change="updateRoute()" checked>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="route_tolls" class="control-label">Peajes</label>
+                        <div class="controls">
+                            <input id="route_tolls" type="checkbox" ng-model="route_tolls" ng-change="updateRoute()">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="route_optimize" class="control-label">Optimizada</label>
+                        <div class="controls">
+                            <input id="route_optimize" type="checkbox" ng-model="route_optimize" ng-change="updateRoute()" checked>
+                        </div>
+                    </div>
+
+                </fieldset>
+                <p>
+                    <button id="createRoute" class="btn btn-block btn-primary" ng-click="createRoute()">Crear</button>
+                    <button id="calcRoute" class="btn btn-block btn-success" ng-click="calcRoute()">Calcular</button>
+                    <button id="resetRoute" class="btn btn-block btn-danger" ng-click="resetRoute()">Reiniciar</button>
+                </p>
+            </form>
+        </div>
+    </div>
     <!-- renders -->
     <div id="list" class="row-fluid">
         <div class="span12">
@@ -216,6 +267,7 @@
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
     <script src="lib/googleMapsUtilityLibrary/geolocationmarker-compiled.js"></script>
     <script src="lib/googleMapsUtilityLibrary/markerwithlabel_packed.js"></script>
+    <script src="lib/googleMapsUtilityLibrary/RouteBoxer_packed.js"></script>
 
     <script src="lib/jquery/jquery-1.7.2.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>

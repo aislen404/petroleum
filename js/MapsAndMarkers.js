@@ -24,6 +24,7 @@ markerObject = (function (){
 
 }).call(this);
 
+//The geoposition and marker
 geoMarker = ( function (){
     function geoMarker (objMap){
 
@@ -43,6 +44,67 @@ geoMarker = ( function (){
     }
 
     return geoMarker;
+
+}).call(this);
+
+directionsObject = ( function () {
+    function directionsObject (){
+        //For directions service
+
+        theDirectionsPanel = document.getElementById('directionsPanel');   //directions div id
+        this.directionsServiceInstance = new google.maps.DirectionsService();
+
+    }
+
+    //Directions layer
+    directionsObject.prototype.addDirectionsLayer = function (objMap){
+        directionsLayerInstance = new google.maps.DirectionsRenderer({
+            preserveViewport: true,
+            draggable: false
+        });
+        directionsLayerInstance.setMap(objMap);
+        directionsLayerInstance.setPanel(this.theDirectionsPanel);
+    };
+
+    directionsObject.prototype.clearDirectionsLayer = function(objMap){
+        console.log('clearDirectionsLayer');
+        directionsLayerInstance.setMap(null);
+        directionsLayerInstance.setPanel(null);
+
+        directionsLayerInstance = new google.maps.DirectionsRenderer();
+
+        directionsLayerInstance.setMap(objMap);
+        directionsLayerInstance.setPanel(this.theDirectionsPanel);
+        console.log('clearDirectionsLayer finish');
+    };
+
+    directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
+        this.directionsServiceInstance.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsLayerInstance.setDirections(response);
+
+                var distance = 2;
+                var path = response.routes[0].overview_path;
+                routeBoxer = new RouteBoxer();
+                var boxes = routeBoxer.box(path, distance);
+                var boxpolys = new Array(boxes.length);
+
+                for (var i = 0; i < boxes.length; i++) {
+                    boxpolys[i] = new google.maps.Rectangle({
+                        bounds: boxes[i],
+                        fillOpacity: 0,
+                        strokeOpacity: 1.0,
+                        strokeColor: '#000000',
+                        strokeWeight: 1,
+                        map: objMap
+                    });
+                }
+                return response.routes[0].overview_path;
+            }
+        });
+    };
+
+    return directionsObject;
 
 }).call(this);
 
@@ -104,96 +166,12 @@ mapObject = (function() {
         return google.maps.event.clearListeners(this.mapInstance,ev)
     };
 
-    // Geolocation and Tracking position
-    mapObject.prototype.positionTrack = function() {
-        if (!this.positionTracking.state) {
-            this.positionTrackingOn();
-            return this.positionTrackRefresh();
-        } else if (this.positionTracking.state) {
-            return this.positionTrackingOff();
-        }
-    };
-    mapObject.prototype.positionTrackingOn = function() {
-        console.log('tracking on');
-        var geoLoc, options, watchID;
-        if (!this.nav) {
-            this.nav = window.navigator;
-        }
-        if (this.nav) {
-            geoLoc = this.nav.geolocation;
-            window.map = this.mapInstance;
-            if (geoLoc) {
-                watchID = geoLoc.watchPosition(geoSuccessCallback, geolocationError, options = {
-                    enableHighAccuracy: true
-                });
-            }
-            try {
-                geoLoc.getCurrentPosition(geoSuccessCallback, geolocationError, options = {
-                    enableHighAccuracy: true
-                });
-            } catch (_error) {}
-            return this.positionTracking.state = true;
-        }
-    };
-    mapObject.prototype.positionTrackRefresh = function() {
-        var pos;
-        pos = window.pos;
-        if (pos) {
-            return this.mapInstance.panTo(new google.maps.LatLng(pos.lat(), pos.lng()));
-        }
-    };
-    mapObject.prototype.positionTrackingOff = function(watchID) {
-        window.navigator.geolocation.clearWatch(watchID);
-        try {
-            window.userPositionMarker.setMap(null);
-        } catch (_error) {}
-        return this.positionTracking.state = false;
-    };
-
     // generic in geo - May be will be used in the DGT services to get the parameters needed in the query
     mapObject.prototype.getLatNS = function (){ return  this.mapInstance.getBounds().getNorthEast().lat(); };
     mapObject.prototype.getLongNS = function (){ return  this.mapInstance.getBounds().getNorthEast().lng(); };
     mapObject.prototype.getLatSW = function (){ return  this.mapInstance.getBounds().getSouthWest().lat(); };
     mapObject.prototype.getLongSW = function (){ return  this.mapInstance.getBounds().getSouthWest().lng(); };
     mapObject.prototype.getZoom = function (){ return  this.mapInstance.getZoom(); };
-
-    //Callback controls for Geolocation
-    geoSuccessCallback = function(position) {
-        var icon;
-        if (position.coords.latitude) {
-            window.pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            try {
-                window.userPositionMarker.setMap(null);
-            } catch (_error) {}
-            icon = icoResolutor('Me');
-            return window.userPositionMarker = new google.maps.Marker({
-                icon: icon,
-                position: window.pos,
-                map: window.map,
-                title: 'You are here.'
-            });
-            window.map.panTo(window.pos);
-        }
-    };
-    geolocationError = function(error) {
-        var alert, msg;
-        console.log('geoLoc error');
-        msg = 'Unable to locate position. ';
-        switch (error.code) {
-            case error.TIMEOUT:
-                msg += 'Timeout.';
-                break;
-            case error.POSITION_UNAVAILABLE:
-                msg += 'Position unavailable.';
-                break;
-            case error.PERMISSION_DENIED:
-                msg += 'Please turn on location services.';
-                break;
-            case error.UNKNOWN_ERROR:
-                msg += error.code;
-        }
-        return msg;
-    };
 
     return mapObject;
 
@@ -225,4 +203,28 @@ icoResolutor = function (type) {
             ico ='img/default.png';
     }
     return ico;
+};
+
+drawBoxes = function (boxes,objMap) {
+    var boxpolys = new Array(boxes.length);
+    for (var i = 0; i < boxes.length; i++) {
+        boxpolys[i] = new google.maps.Rectangle({
+            bounds: boxes[i],
+            fillOpacity: 0,
+            strokeOpacity: 1.0,
+            strokeColor: '#000000',
+            strokeWeight: 1,
+            map: objMap
+        });
+    }
+};
+
+// Clear boxes currently on the map
+clearBoxes = function () {
+    if (boxpolys != null) {
+        for (var i = 0; i < boxpolys.length; i++) {
+            boxpolys[i].setMap(null);
+        }
+    }
+    boxpolys = null;
 };

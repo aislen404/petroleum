@@ -11,9 +11,9 @@ module = angular.module('petroleum_app.services',['ngResource']);
 //These service create the map and trigger the geolocalization on.
 module.factory('mapServiceProvider', function (){
     var myOptions = {};
-    var mapa = new mapObject (myOptions);   //mapObject is an interface for google map API
-    //mapa.positionTrack();                   //swicht on the geolocalization (if is available)
-    return mapa;                            //returning the google map object
+    var mapa = new mapObject (myOptions);
+
+    return mapa;
 });
 
 // --------- THE GEOPOSITION  --------- \\
@@ -23,12 +23,30 @@ module.factory('geoMarkerServiceProvider', function (){
         activate: function (objMap){
             return geoMarker(objMap);
         },
-        deactivate: function (geoM){
+        deactivate: function (){
 
         }
     };
 });
 
+// --------- THE DIRECTION SERVICE  --------- \\
+//.
+module.factory('directionsServiceProvider', function (){
+
+    var drObj = new directionsObject;
+
+    return {
+        addDirectionsLayer: function (objMap){
+            return drObj.addDirectionsLayer(objMap);
+        },
+        clearDirectionsLayer: function (objMap){
+            return drObj.clearDirectionsLayer(objMap);
+        },
+        calculateDirectionsLayer: function (request,objMap){
+            return drObj.calculateDirectionsLayer(request,objMap);
+        }
+    };
+});
 
 // --------- THE DATASETS  --------- \\
 //These service only get data for the data sets, is AngularJS 100%

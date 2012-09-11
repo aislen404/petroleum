@@ -14,3 +14,18 @@ function renderToggle_view (el) {
     $('#map').toggle();
 
 }
+
+function addRow (data) {
+
+    var tds ='<tr>';
+    tds += '<td>'+data.rotulo+'</td>';
+    tds += '<td>'+data.precio+'</td>';
+    tds += '<td>'+data.lat+'</td>';
+    tds += '<td>'+data.lng+'</td>';
+    tds+='</tr>';
+
+    $('#tabla tbody').append(tds);
+}
+function clearTable (){
+    $('#tabla tbody').html('');
+}
