@@ -53,7 +53,6 @@ directionsObject = ( function () {
 
         theDirectionsPanel = document.getElementById('directionsPanel');   //directions div id
         this.directionsServiceInstance = new google.maps.DirectionsService();
-
     }
 
     //Directions layer
@@ -79,7 +78,7 @@ directionsObject = ( function () {
     };
 
     directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
-        this.directionsServiceInstance.route(request, function(response, status) {
+        return this.directionsServiceInstance.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsLayerInstance.setDirections(response);
 
@@ -89,7 +88,10 @@ directionsObject = ( function () {
                 var boxes = routeBoxer.box(path, distance);
                 var boxpolys = new Array(boxes.length);
 
+                this.boxes_bounds = [];
+
                 for (var i = 0; i < boxes.length; i++) {
+                    this.boxes_bounds[i] = boxes[i];
                     boxpolys[i] = new google.maps.Rectangle({
                         bounds: boxes[i],
                         fillOpacity: 0,
@@ -99,9 +101,13 @@ directionsObject = ( function () {
                         map: objMap
                     });
                 }
-                return response.routes[0].overview_path;
+                return this.boxes_bounds;
             }
         });
+    };
+
+    directionsObject.prototype.getMeBounds = function(){
+        return this.boxes_bounds;
     };
 
     return directionsObject;

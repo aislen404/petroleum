@@ -294,9 +294,10 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
             };
 
             //Calling directly to the method of the map object
+
             $scope.directionLayerResponse = directionsServiceProvider.calculateDirectionsLayer(request,$scope.mapObj.mapInstance);
 
-            console.log('$scope.directionLayerResponse',$scope.directionLayerResponse);
+            console.log('controler ',$scope.directionLayerResponse);
 
             //Unregistering the event for no more waypoints
             $scope.mapObj.unRegisterEvent('click');
