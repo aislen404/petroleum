@@ -20,6 +20,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
     //gasolina
     $scope.gasolinaCluster=[];
+    $scope.gasolina_type = 0;
 
     //route planning filters
     $scope.route_mode='driving';
@@ -42,12 +43,29 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     $scope.BeganToBegin = function (){
         $scope.initJqueryScripts();
         $scope.showLocalizacionOptions();
-        $scope.showCombustibleOptions();
         $scope.showRoutePlanningOptions();
         $scope.createMap();
         $scope.gasToggle();
 
     };
+
+    $scope.initJqueryScripts = function (){
+        $('#list').hide();
+        $('#gas_on_route_control').hide();
+    };
+
+    $scope.showLocalizacionOptions = function (){
+        $('#myModalLocalizacion').toggle();
+    };
+
+    $scope.showCombustibleOptions = function (){
+        $('#myModalCombustible').toggle();
+    };
+
+    $scope.showRoutePlanningOptions = function (){
+        $('#myModalRoutePlanning').toggle();
+    };
+
     // Control the creation of map
     $scope.createMap = function() {
 
@@ -69,114 +87,118 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     // Gas control
     $scope.gasToggle = function (){
 
-        try {
-            $scope.gasolinaCluster.clearMarkers();
-            $scope.gasolinaCluster=[];
-            clearTable();
-        }catch(e){} //clearMarkers is a method of MarkerCluster
+        $scope.showCombustibleOptions();
 
         if($scope.gasolina_type !=0 ){
 
-            $scope.showCombustibleOptions();
-
             $('#gas_ctrl').attr('class','gas-load');
 
-            var latNS = $scope.mapObj.getLatNS();
-            var lngNS = $scope.mapObj.getLongNS();
-            var latSW = $scope.mapObj.getLatSW();
-            var lngSW = $scope.mapObj.getLongSW();
+            var uri='dataModels/mitycProxy.php?tipo=';
+            var param;
+            if($scope.directionLayerResponse != null){
 
-            var URI = 'dataModels/mitycProxy.php?tipo='+$scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
-            console.log(URI);
-            var arryOfMarkers = [];
+                console.log($scope.directionLayerResponse.length);
+                var bound;
+                for( bound in $scope.directionLayerResponse){
+                    var latNS = $scope.directionLayerResponse[bound].latNS;
+                    var lngNS = $scope.directionLayerResponse[bound].lngNS;
+                    var latSW = $scope.directionLayerResponse[bound].latSW;
+                    var lngSW = $scope.directionLayerResponse[bound].lngSW;
 
-            $.ajax({
-                type: 'GET',
-                url: URI,
-                dataType: 'xml',
-                success: function (data){
-                    var i=1;
-                    var valor=0;
-                    var expensive;
-                    var expensiveOption;
-                    var cheap;
-                    var cheapOption;
-                    var gasolinera;
-                    var theData;
-                    var tipo;
-                    $scope.datos = [];
-
-                    $(data).find('elemento').each(function()
-                    {
-
-                        if(i==1){
-                            tipo = 'barata';
-                        }else if(i==$(data).find('elemento').length){
-                            tipo = 'cara';
-                        }else{
-                            tipo = 'Gasolinera';
-                        }
-
-                        theData = {
-                            tipo : tipo,
-                            precio: $(this).find('precio').text()+' €',
-                            rotulo: $(this).find('rotulo').text(),
-                            alias : $(this).find('precio').text()+' €',
-                            lat : $(this).find('y').text(),
-                            lng : $(this).find('x').text()
-                        };
-
-                        addRow(theData);
-                        $scope.datos.push(theData);
-                        arryOfMarkers.push(markerCreator(theData,$scope.mapObj.mapInstance));
-
-                        var auxPrecio = parseInt(theData.alias.replace(/,/g, '.'));
-
-                        if(auxPrecio>valor){
-                            expensive = auxPrecio;
-                            expensiveOption = theData;
-                            valor = expensive;
-                        }else{
-                            cheap = auxPrecio;
-                            cheapOption = theData;
-                        }
-
-                        $scope.gasolinaCluster.push(gasolinera);
-
-                        i+=1;
-                    });
-
-                    $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
-                    $scope.datos= angular.toJson($scope.datos);
-
-                    console.log('Gasolineras',i-1);
-                    console.log('cheapOption',cheapOption);
-                    console.log('expensiveOption',expensiveOption);
-                    console.log($scope.datos);
-
-                    $('#gas_ctrl').attr('class','gas');
+                    param = $scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
+                    console.log('URL para el proxy',uri+param);
+                    $scope.gasCntrl(uri+param);
                 }
-            });
+
+            }else{
+                try {
+                    $scope.gasolinaCluster.clearMarkers();
+                    $scope.gasolinaCluster=[];
+                    clearTable();
+                }catch(e){}
+                var latNS = $scope.mapObj.getLatNS();
+                var lngNS = $scope.mapObj.getLongNS();
+                var latSW = $scope.mapObj.getLatSW();
+                var lngSW = $scope.mapObj.getLongSW();
+
+                param = $scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
+                console.log('URL para el proxy',uri+param);
+                $scope.gasCntrl(uri+param);
+            }
         }
     };
 
-    $scope.initJqueryScripts = function (){
-        $('#list').hide();
-    };
+    $scope.gasCntrl = function (uri){
+        var arryOfMarkers = [];
 
+        $.ajax({
+            type: 'GET',
+            url: uri,
+            dataType: 'xml',
+            success: function (data){
+                var i=1;
+                var valor=0;
+                var expensive;
+                var expensiveOption;
+                var cheap;
+                var cheapOption;
+                var gasolinera;
+                var theData;
+                var tipo;
+                $scope.datos = [];
 
-    $scope.showLocalizacionOptions = function (){
-        $('#myModalLocalizacion').toggle();
-    };
+                $(data).find('elemento').each(function()
+                {
 
-    $scope.showCombustibleOptions = function (){
-        $('#myModalCombustible').toggle();
-    };
+                    if(i==1){
+                        tipo = 'barata';
+                    }else if(i==$(data).find('elemento').length){
+                        tipo = 'cara';
+                    }else{
+                        tipo = 'Gasolinera';
+                    }
 
-    $scope.showRoutePlanningOptions = function (){
-        $('#myModalRoutePlanning').toggle();
-    };
+                    theData = {
+                        tipo : tipo,
+                        precio: $(this).find('precio').text()+' €',
+                        rotulo: $(this).find('rotulo').text(),
+                        alias : $(this).find('precio').text()+' €',
+                        lat : $(this).find('y').text(),
+                        lng : $(this).find('x').text()
+                    };
 
+                    addRow(theData);
+                    $scope.datos.push(theData);
+                    arryOfMarkers.push(markerCreator(theData,$scope.mapObj.mapInstance));
+
+                    var auxPrecio = parseInt(theData.alias.replace(/,/g, '.'));
+
+                    if(auxPrecio>valor){
+                        expensive = auxPrecio;
+                        expensiveOption = theData;
+                        valor = expensive;
+                    }else{
+                        cheap = auxPrecio;
+                        cheapOption = theData;
+                    }
+
+                    $scope.gasolinaCluster.push(gasolinera);
+
+                    i+=1;
+                });
+
+                $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
+                $scope.datos= angular.toJson($scope.datos);
+
+                console.log('Gasolineras',i-1);
+                console.log('cheapOption',cheapOption);
+                console.log('expensiveOption',expensiveOption);
+                console.log($scope.datos);
+
+                $('#gas_ctrl').attr('class','gas');
+            }
+        });
+    }
     $scope.renderToggle = function (el){
         renderToggle_view ('btn_renderToggle');
     };
@@ -190,7 +212,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
             }
         }
     };
-
 
 // --------- Controls for route planning --------- \\
     // Init the direction routine and register click event to creater the route marks (waypoints)
@@ -295,9 +316,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
             //Calling directly to the method of the map object
 
-            $scope.directionLayerResponse = directionsServiceProvider.calculateDirectionsLayer(request,$scope.mapObj.mapInstance);
-
-            console.log('controler ',$scope.directionLayerResponse);
+            directionsServiceProvider.calculateDirectionsLayer(request,$scope.mapObj.mapInstance);
 
             //Unregistering the event for no more waypoints
             $scope.mapObj.unRegisterEvent('click');
@@ -305,10 +324,17 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
             //Needed to remove the temporal markers created by the user in the route
             $scope.removeTemporalMarkers();
 
+            //Show the control for gaz in the route
+            $('#gas_on_route_control').show();
             //Hide the button !! prevent malicious or dumbs cliks
             $('#calcRoute').hide();
         }
     };
+
+    $scope.boundsRoute = function (){
+        $scope.directionLayerResponse = directionsServiceProvider.getDirectionsBounds();
+        console.log('controler --> $scope.directionLayerResponse: ',$scope.directionLayerResponse);
+    }
 
     $scope.removeTemporalMarkers = function(){
         for (var i = 0; i < $scope.wayPointsCluster.length; i++) {
@@ -333,6 +359,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         $scope.origin = null;
         $scope.destination = null;
 
+        $('#gas_on_route_control').hide();
         $('#createRoute').show();
         $('#calcRoute').show();
 

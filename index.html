@@ -19,9 +19,9 @@
     <!-- top navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <a class="brand" href="#"><small>&nbsp;&#402; 15</small></a>
+            <a class="brand" href="#"><small>&nbsp;&#402; 16</small></a>
             <ul class="nav pull-right">
-                <li><a href="#" id="btn_renderToggle" class="mapa" ng-click="renderToggle()"></a></li>
+                <li><a href="#"ng-click="boundsRoute()">Log</a></li>
                 <li><a href="#" class="refresh" ng-click="gasToggle()"></a></li>
                 <li><a href="#" class="geopos" ng-click="showLocalizacionOptions()"></a></li>
                 <li><a id="gas_ctrl" href="#" class="gas" ng-click="showCombustibleOptions()"></a></li>
@@ -165,7 +165,7 @@
                         <label for="select_combustible" class="control-label">Selecciona el:</label>
                         <div class="controls">
                             <select id="select_combustible" class="input-medium" ng-model="gasolina_type">
-                                <option value="0" selected>-Combustible-</option>
+                                <option value="0">-Combustible-</option>
                                 <option value="1">Gasolina 95</option>
                                 <option value="2">Gasolina 97</option>
                                 <option value="3">Gasolina 98</option>
@@ -177,64 +177,72 @@
                             </select>
                         </div>
                     </div>
-                </fieldset>
-                <p>
-                  <button type="submit" class="btn btn-block btn-primary" ng-click="gasToggle()" >Ok</button>
-                </p>
-            </form>
-        </div> 
-    </div>
 
-    <div class="modal" id="myModalRoutePlanning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" ng-click="showRoutePlanningOptions()">×</button>
-            <h3><i class="ico-route-form"></i> Route Planning: </h3>
-        </div>
-        <div class="modal-body">
-            <form id="formRoutePlanning" class="form-horizontal">
-                <fieldset>
-
-                    <legend><small>Crea tu ruta, maximo 9 puntos intermedios</small></legend>
-
-                    <div class="control-group">
-                        <label for="route_mode" class="control-label">Modo</label>
+                    <div id="gas_on_route_control" class="control-group">
+                        <label for="checkbox_gas_on_route" class="control-label">En la ruta?:</label>
                         <div class="controls">
-                            <select id="route_mode"class="input-medium" ng-model="route_mode" ng-change="updateRoute()">
-                                <option value="driving">Conduciendo</option>
-                                <option value="walking">Andando</option>
-                                <option value="bicycling">Bicicleta</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="route_highways" class="control-label">Autopistas</label>
-                        <div class="controls">
-                            <input id="route_highways" type="checkbox" ng-model="route_highways" ng-change="updateRoute()" checked>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="route_tolls" class="control-label">Peajes</label>
-                        <div class="controls">
-                            <input id="route_tolls" type="checkbox" ng-model="route_tolls" ng-change="updateRoute()">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="route_optimize" class="control-label">Optimizada</label>
-                        <div class="controls">
-                            <input id="route_optimize" type="checkbox" ng-model="route_optimize" ng-change="updateRoute()" checked>
+                            <input type="checkbox" id="checkbox_gas_on_route" ng-model="gas_on_route" ng-change="boundsRoute()"/>
                         </div>
                     </div>
 
-                </fieldset>
-                <p>
-                    <button id="createRoute" class="btn btn-block btn-primary" ng-click="createRoute()">Crear</button>
-                    <button id="calcRoute" class="btn btn-block btn-success" ng-click="calcRoute()">Calcular</button>
-                    <button id="resetRoute" class="btn btn-block btn-danger" ng-click="resetRoute()">Reiniciar</button>
-                </p>
-            </form>
-        </div>
-    </div>
-    <!-- renders -->
+                  </fieldset>
+                  <p>
+                    <button type="submit" class="btn btn-block btn-primary" ng-click="gasToggle()" >Ok</button>
+                  </p>
+              </form>
+          </div>
+      </div>
+
+      <div class="modal" id="myModalRoutePlanning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" ng-click="showRoutePlanningOptions()">×</button>
+              <h3><i class="ico-route-form"></i> Route Planning: </h3>
+          </div>
+          <div class="modal-body">
+              <form id="formRoutePlanning" class="form-horizontal">
+                  <fieldset>
+
+                      <legend><small>Crea tu ruta, maximo 9 puntos intermedios</small></legend>
+
+                      <div class="control-group">
+                          <label for="route_mode" class="control-label">Modo</label>
+                          <div class="controls">
+                              <select id="route_mode"class="input-medium" ng-model="route_mode" ng-change="updateRoute()">
+                                  <option value="driving">Conduciendo</option>
+                                  <option value="walking">Andando</option>
+                                  <option value="bicycling">Bicicleta</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="control-group">
+                          <label for="route_highways" class="control-label">Autopistas</label>
+                          <div class="controls">
+                              <input id="route_highways" type="checkbox" ng-model="route_highways" ng-change="updateRoute()" checked>
+                          </div>
+                      </div>
+                      <div class="control-group">
+                          <label for="route_tolls" class="control-label">Peajes</label>
+                          <div class="controls">
+                              <input id="route_tolls" type="checkbox" ng-model="route_tolls" ng-change="updateRoute()">
+                          </div>
+                      </div>
+                      <div class="control-group">
+                          <label for="route_optimize" class="control-label">Optimizada</label>
+                          <div class="controls">
+                              <input id="route_optimize" type="checkbox" ng-model="route_optimize" ng-change="updateRoute()" checked>
+                          </div>
+                      </div>
+
+                  </fieldset>
+                  <p>
+                      <button id="createRoute" class="btn btn-block btn-primary" ng-click="createRoute()">Crear</button>
+                      <button id="calcRoute" class="btn btn-block btn-success" ng-click="calcRoute()">Calcular</button>
+                      <button id="resetRoute" class="btn btn-block btn-danger" ng-click="resetRoute()">Reiniciar</button>
+                  </p>
+              </form>
+          </div>
+      </div>
+                  <!-- renders -->
     <div id="list" class="row-fluid">
         <div class="span12">
             <table id="tabla" class="table table-bordered table-hover table-condensed">

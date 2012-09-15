@@ -52,7 +52,12 @@ directionsObject = ( function () {
         //For directions service
 
         theDirectionsPanel = document.getElementById('directionsPanel');   //directions div id
-        this.directionsServiceInstance = new google.maps.DirectionsService();
+        directionsServiceInstance = new google.maps.DirectionsService();
+
+        routeBoxer = new RouteBoxer();
+        boxpolys = new Array();
+        boxPolysBounds = new Array();
+
     }
 
     //Directions layer
@@ -62,7 +67,7 @@ directionsObject = ( function () {
             draggable: false
         });
         directionsLayerInstance.setMap(objMap);
-        directionsLayerInstance.setPanel(this.theDirectionsPanel);
+        directionsLayerInstance.setPanel(theDirectionsPanel);
     };
 
     directionsObject.prototype.clearDirectionsLayer = function(objMap){
@@ -70,44 +75,58 @@ directionsObject = ( function () {
         directionsLayerInstance.setMap(null);
         directionsLayerInstance.setPanel(null);
 
+        if (boxpolys != null) {
+            for (var i = 0; i < boxpolys.length; i++) {
+                boxpolys[i].setMap(null);
+            }
+        }
+        boxpolys = null;
+
         directionsLayerInstance = new google.maps.DirectionsRenderer();
 
         directionsLayerInstance.setMap(objMap);
-        directionsLayerInstance.setPanel(this.theDirectionsPanel);
+        directionsLayerInstance.setPanel(theDirectionsPanel);
         console.log('clearDirectionsLayer finish');
     };
 
     directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
-        return this.directionsServiceInstance.route(request, function(response, status) {
+        directionsServiceInstance.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsLayerInstance.setDirections(response);
 
                 var distance = 2;
                 var path = response.routes[0].overview_path;
-                routeBoxer = new RouteBoxer();
-                var boxes = routeBoxer.box(path, distance);
-                var boxpolys = new Array(boxes.length);
-
-                this.boxes_bounds = [];
+                var boxes = this.routeBoxer.box(path, distance);
 
                 for (var i = 0; i < boxes.length; i++) {
-                    this.boxes_bounds[i] = boxes[i];
-                    boxpolys[i] = new google.maps.Rectangle({
+                    boxPolysBounds.push(boxes[i]);
+                    boxpolys.push(new google.maps.Rectangle({
                         bounds: boxes[i],
                         fillOpacity: 0,
                         strokeOpacity: 1.0,
                         strokeColor: '#000000',
                         strokeWeight: 1,
                         map: objMap
-                    });
+                    }));
                 }
-                return this.boxes_bounds;
+                console.log ('nº boxypolys created --> ',i);
             }
         });
     };
 
-    directionsObject.prototype.getMeBounds = function(){
-        return this.boxes_bounds;
+    directionsObject.prototype.getBoxPolysBounds = function(){
+        var response = new Array();
+        for (var i=0; i< boxPolysBounds.length; i++) {
+            response.push({
+                latSW:boxPolysBounds[i].ca.b,
+                lngSW:boxPolysBounds[i].ea.b,
+                latNS:boxPolysBounds[i].ca.f,
+                lngNS:boxPolysBounds[i].ea.f
+            });
+        }
+        //response = JSON.stringify(response);
+        console.log(response);
+        return response ;
     };
 
     return directionsObject;

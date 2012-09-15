@@ -44,6 +44,9 @@ module.factory('directionsServiceProvider', function (){
         },
         calculateDirectionsLayer: function (request,objMap){
             return drObj.calculateDirectionsLayer(request,objMap);
+        },
+        getDirectionsBounds: function (){
+            return drObj.getBoxPolysBounds();
         }
     };
 });
