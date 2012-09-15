@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-amelia.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-cyborg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-slate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-superhero.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services.js" afterPath="$PROJECT_DIR$/js/services.js" />
     </list>
     <ignored path="petroleum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,36 +29,37 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="53" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0">
+            <state line="16" column="5" selection-start="202" selection-end="206" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4258" column="1" selection-start="80214" selection-end="80214" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="31" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.5291723">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="20" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.17739816">
+            <state line="176" column="69" selection-start="5544" selection-end="5545" vertical-scroll-proportion="-76.84615">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#1466#1517#0" expanded="false" />
+                <element signature="e#1567#1617#0" expanded="false" />
+                <element signature="e#1669#1721#0" expanded="false" />
+                <element signature="e#1793#2399#0" expanded="false" />
+                <element signature="e#7128#10024#0" expanded="false" />
+                <element signature="e#10154#12171#0" expanded="false" />
+                <element signature="e#12210#12406#0" expanded="false" />
+                <element signature="e#12453#12590#0" expanded="false" />
+                <element signature="e#12663#12747#0" expanded="false" />
+                <element signature="e#12875#13212#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,9 +127,9 @@
         <option value="$PROJECT_DIR$/app.html" />
         <option value="$PROJECT_DIR$/preloadV2.html" />
         <option value="$PROJECT_DIR$/js/services.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -291,7 +286,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
   </component>
   <component name="PublishConfig">
@@ -465,23 +460,6 @@
         <state line="7" column="204" selection-start="139" selection-end="429" vertical-scroll-proportion="0.1420839" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="53" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4258" column="1" selection-start="80214" selection-end="80214" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="31" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="36" selection-start="1317" selection-end="1325" vertical-scroll-proportion="0.0" />
@@ -502,12 +480,43 @@
         <state line="10" column="28" selection-start="176" selection-end="205" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4258" column="1" selection-start="80214" selection-end="80214" vertical-scroll-proportion="-0.05913272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="202" selection-end="206" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="20" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.17739816">
+        <state line="176" column="69" selection-start="5544" selection-end="5545" vertical-scroll-proportion="-76.84615">
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1466#1517#0" expanded="false" />
+            <element signature="e#1567#1617#0" expanded="false" />
+            <element signature="e#1669#1721#0" expanded="false" />
+            <element signature="e#1793#2399#0" expanded="false" />
+            <element signature="e#7128#10024#0" expanded="false" />
+            <element signature="e#10154#12171#0" expanded="false" />
+            <element signature="e#12210#12406#0" expanded="false" />
+            <element signature="e#12453#12590#0" expanded="false" />
+            <element signature="e#12663#12747#0" expanded="false" />
+            <element signature="e#12875#13212#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.5291723">
+          <folding />
         </state>
       </provider>
     </entry>
