@@ -42,6 +42,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     // Main function in ng-init
     $scope.BeganToBegin = function (){
         $scope.initJqueryScripts();
+        $scope.progressToggle();
         $scope.showLocalizacionOptions();
         $scope.showRoutePlanningOptions();
         $scope.createMap();
@@ -92,12 +93,14 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         try {
             $scope.gasolinaCluster.clearMarkers();
             $scope.gasolinaCluster=[];
+            $scope.datos=null;
             clearTable();
         }catch(e){}
 
         if($scope.gasolina_type !=0 ){
 
             $('#gas_ctrl').attr('class','gas-load');
+            $scope.progressToggle();
 
             var uri='dataModels/mitycProxy.php?tipo=';
             var param;
@@ -107,6 +110,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 console.log($scope.directionLayerResponse.length);
                 var bound;
                 for( bound in $scope.directionLayerResponse){
+
                     var latNS = $scope.directionLayerResponse[bound].latNS;
                     var lngNS = $scope.directionLayerResponse[bound].lngNS;
                     var latSW = $scope.directionLayerResponse[bound].latSW;
@@ -128,6 +132,9 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 console.log('URL para el proxy',uri+param);
                 $scope.gasCntrl(uri+param);
             }
+
+            $('#gas_ctrl').attr('class','gas');
+            $scope.progressToggle();
         }
     };
 
@@ -147,7 +154,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 var expensiveOption;
                 var cheap;
                 var cheapOption;
-                var gasolinera;
                 var theData;
                 var tipo;
                 $scope.datos = [];
@@ -187,8 +193,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                         cheapOption = theData;
                     }
 
-                    //$scope.gasolinaCluster.push(gasolinera);
-
                     i+=1;
                 });
 
@@ -199,13 +203,15 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 console.log('cheapOption',cheapOption);
                 console.log('expensiveOption',expensiveOption);
                 console.log($scope.datos);
-
-                $('#gas_ctrl').attr('class','gas');
             }
         });
     }
-    $scope.renderToggle = function (el){
+    $scope.renderToggle = function (){
         renderToggle_view ('btn_renderToggle');
+    };
+
+    $scope.progressToggle = function (){
+      $('#myModalProgressAlert').toggle();
     };
 
     $scope.positionControl = function (){
@@ -284,6 +290,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         if(!$scope.directionLayer){
 
             $scope.showRoutePlanningOptions();
+            $scope.progressToggle();
 
             //Without origin or any destination is not possible calculate no route.
             if ($scope.origin == null) {
@@ -333,6 +340,8 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
             $('#gas_on_route_control').show();
             //Hide the button !! prevent malicious or dumbs cliks
             $('#calcRoute').hide();
+
+            $scope.progressToggle();
         }
     };
 

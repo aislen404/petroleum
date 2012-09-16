@@ -4,7 +4,7 @@
 	<meta charset=utf-8 />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Petroleum</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-amelia.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -19,12 +19,11 @@
     <!-- top navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <a class="brand" href="#"><small>&nbsp;&#402; 16</small></a>
+            <a class="brand" href="#"><small>&nbsp;&#402; 18</small></a>
             <ul class="nav pull-right">
-                <li><a href="#"ng-click="boundsRoute()">Log</a></li>
                 <li><a href="#" class="refresh" ng-click="gasToggle()"></a></li>
                 <li><a href="#" class="geopos" ng-click="showLocalizacionOptions()"></a></li>
-
+                <li><a id="btn_renderToggle"  href="#" class="mapa" ng-click="renderToggle()"></a></li>
                 <li><a id="gas_ctrl" href="#" class="gas" ng-click="showCombustibleOptions()"></a></li>
                 <li><a href="#" class="route" ng-click="showRoutePlanningOptions()"></a></li>
             </ul>
@@ -147,8 +146,8 @@
                     </div>
 -->
                 </fieldset>
-                <p>
-                    <button type="submit" class="btn btn-block btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
+                <p class="form-actions">
+                    <button type="submit" class="btn btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
                 </p>
             </form>
         </div>
@@ -187,8 +186,8 @@
                     </div>
 
                   </fieldset>
-                  <p>
-                    <button type="submit" class="btn btn-block btn-primary" ng-click="gasToggle()" >Ok</button>
+                  <p class="form-actions">
+                    <button type="submit" class="btn btn-primary" ng-click="gasToggle()" >Ok</button>
                   </p>
               </form>
           </div>
@@ -236,9 +235,9 @@
 
                   </fieldset>
                   <p>
-                      <button id="createRoute" class="btn btn-block btn-primary" ng-click="createRoute()">Crear</button>
-                      <button id="calcRoute" class="btn btn-block btn-success" ng-click="calcRoute()">Calcular</button>
-                      <button id="resetRoute" class="btn btn-block btn-danger" ng-click="resetRoute()">Reiniciar</button>
+                      <button id="createRoute" class="btn btn-primary" ng-click="createRoute()">Crear</button>
+                      <button id="calcRoute" class="btn btn-success" ng-click="calcRoute()">Calcular</button>
+                      <button id="resetRoute" class="btn btn-danger" ng-click="resetRoute()">Reiniciar</button>
                   </p>
               </form>
           </div>
@@ -266,6 +265,19 @@
     <div id="map" class="row-fluid">
         <div id="map_canvas" class="span12">Mapa</div>
     </div>
+
+<!-- Progress -->
+    <div class="modal" id="myModalProgressAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <h3> Cargando: </h3>
+    </div>
+    <div class="modal-body">
+        <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+    </div>
+    </div>
+
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

@@ -13,7 +13,9 @@ html, body {
     left: 0;
     right: 0;
 }
-
+caption {
+    display: none;
+}
 .mapa {
     background:transparent url(../img/world_36.png) no-repeat;
     height: 28px;
@@ -22,8 +24,8 @@ html, body {
 
 .lista {
     background:transparent url(../img/order_36.png) no-repeat;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 10px;
 }
 .refresh{
     background:transparent url(../img/refresh_36.png) no-repeat;
@@ -50,7 +52,14 @@ html, body {
     height: 28px;
     width: 22px;
 }
-
+.labels {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 2px;
+    width: 42px;
+    height: auto;
+}
 .ico-prov-form {
     background:transparent url(../img/pushpin_24.png) no-repeat;
     background-repeat: no-repeat;

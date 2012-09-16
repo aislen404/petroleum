@@ -63,6 +63,7 @@ directionsObject = ( function () {
     //Directions layer
     directionsObject.prototype.addDirectionsLayer = function (objMap){
         directionsLayerInstance = new google.maps.DirectionsRenderer({
+            strokeColor: '#FF0000',
             preserveViewport: true,
             draggable: false
         });
@@ -92,6 +93,7 @@ directionsObject = ( function () {
     directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
         directionsServiceInstance.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
+
                 directionsLayerInstance.setDirections(response);
 
                 var distance = 2;
@@ -102,10 +104,11 @@ directionsObject = ( function () {
                     boxPolysBounds.push(boxes[i]);
                     boxpolys.push(new google.maps.Rectangle({
                         bounds: boxes[i],
-                        fillOpacity: 0,
+                        fillOpacity: 0.2,
+                        fillColor: '#66CCFF',
                         strokeOpacity: 1.0,
-                        strokeColor: '#000000',
-                        strokeWeight: 1,
+                        strokeColor: '#3399CC',
+                        strokeWeight: 0.5,
                         map: objMap
                     }));
                 }
@@ -133,7 +136,6 @@ directionsObject = ( function () {
 
 }).call(this);
 
-
 //The Map
 mapObject = (function() {
     var geoSuccessCallback, geolocationError;
@@ -142,7 +144,7 @@ mapObject = (function() {
 
         var theLat = 40.418889;     // Madrid City Center Latitude
         var theLong = -3.691944;    // Madrid City Center Longitude
-        this.theZoom = 9;            // First Zoom
+        this.theZoom = 12;            // First Zoom
 
         this.theMap = document.getElementById('map_canvas');                    //map div id
 
@@ -230,19 +232,6 @@ icoResolutor = function (type) {
     return ico;
 };
 
-drawBoxes = function (boxes,objMap) {
-    var boxpolys = new Array(boxes.length);
-    for (var i = 0; i < boxes.length; i++) {
-        boxpolys[i] = new google.maps.Rectangle({
-            bounds: boxes[i],
-            fillOpacity: 0,
-            strokeOpacity: 1.0,
-            strokeColor: '#000000',
-            strokeWeight: 1,
-            map: objMap
-        });
-    }
-};
 
 // Clear boxes currently on the map
 clearBoxes = function () {
