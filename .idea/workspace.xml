@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-    </list>
+    <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="" />
     <ignored path="petroleum.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,102 +21,7 @@
     <favorites_list name="petroleum" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="13" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-cyborg.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap-cyborg.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="16" selection-start="2382" selection-end="2388" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="60" selection-start="1034" selection-end="1034" vertical-scroll-proportion="90.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-amelia.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap-amelia.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="726" column="0" selection-start="12276" selection-end="12276" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/controllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="13" selection-start="2673" selection-end="2673" vertical-scroll-proportion="0.5259467">
-              <folding>
-                <element signature="e#1371#1448#0" expanded="false" />
-                <element signature="e#1499#1550#0" expanded="false" />
-                <element signature="e#1600#1650#0" expanded="false" />
-                <element signature="e#1702#1754#0" expanded="false" />
-                <element signature="e#6203#6258#0" expanded="false" />
-                <element signature="e#6300#6350#0" expanded="false" />
-                <element signature="e#6393#6651#0" expanded="false" />
-                <element signature="e#6841#9737#0" expanded="false" />
-                <element signature="e#12241#12378#0" expanded="false" />
-                <element signature="e#12451#12535#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="12" selection-start="3377" selection-end="3380" vertical-scroll-proportion="-26.038462">
-              <folding>
-                <element signature="e#307#394#0" expanded="false" />
-                <element signature="e#562#715#0" expanded="false" />
-                <element signature="e#827#1353#0" expanded="false" />
-                <element signature="e#1522#1642#0" expanded="false" />
-                <element signature="e#3914#3977#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapsAndMarkers.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="0" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#39#809#0" expanded="false" />
-                <element signature="e#878#1492#0" expanded="false" />
-                <element signature="e#4334#6919#0" expanded="false" />
-                <element signature="e#7037#7543#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jqueryScrips.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jqueryScrips.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="103" selection-end="107" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -132,8 +34,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/bootstrap-responsive.css" />
-        <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/lib/googleMapsUtilityLibrary/geolocationmarker-compiled.js" />
         <option value="$PROJECT_DIR$/js/jqueryScrips.js" />
         <option value="$PROJECT_DIR$/forms_modal.html" />
@@ -148,6 +48,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/css/style3.css" />
+        <option value="$PROJECT_DIR$/index3.html" />
       </list>
     </option>
   </component>
@@ -362,13 +264,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.34581771" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.6454432" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32958803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.23470661" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.42696628" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39950064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19830628" sideWeight="0.6641698" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -378,7 +280,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -439,21 +341,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8530" column="21" selection-start="274757" selection-end="274757" vertical-scroll-proportion="2.7464788" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/SantaderWebTV_NO/preload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="51" selection-start="698" selection-end="698" vertical-scroll-proportion="-0.27272728" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/MAMP/htdocs/SantaderWebTV_NO/preloadV2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="46" selection-start="572" selection-end="572" vertical-scroll-proportion="0.44335663" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.2992021" />
@@ -471,81 +358,41 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/ECMAScript.js2">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.3324573">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jqueryScrips.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="103" selection-end="107" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="29" column="25" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.3324573" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/googleMapsUtilityLibrary/RouteBoxer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="23" selection-start="3181" selection-end="3181" vertical-scroll-proportion="-8.7286825">
-          <folding />
-        </state>
+        <state line="81" column="23" selection-start="3181" selection-end="3181" vertical-scroll-proportion="-8.7286825" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap-amelia.css">
+    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="726" column="0" selection-start="12276" selection-end="12276" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="88" column="0" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jqueryScrips.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="103" selection-end="107" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+        <state line="27" column="13" selection-start="443" selection-end="443" vertical-scroll-proportion="0.019946808">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap-cyborg.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="16" selection-start="2382" selection-end="2388" vertical-scroll-proportion="0.0">
+        <state line="144" column="16" selection-start="2382" selection-end="2388" vertical-scroll-proportion="0.020297699">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="12" selection-start="3377" selection-end="3380" vertical-scroll-proportion="-26.038462">
-          <folding>
-            <element signature="e#307#394#0" expanded="false" />
-            <element signature="e#562#715#0" expanded="false" />
-            <element signature="e#827#1353#0" expanded="false" />
-            <element signature="e#1522#1642#0" expanded="false" />
-            <element signature="e#3914#3977#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="1034" selection-end="1034" vertical-scroll-proportion="90.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#39#809#0" expanded="false" />
-            <element signature="e#878#1492#0" expanded="false" />
-            <element signature="e#4334#6919#0" expanded="false" />
-            <element signature="e#7037#7543#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="13" selection-start="2673" selection-end="2673" vertical-scroll-proportion="0.5259467">
+        <state line="95" column="13" selection-start="2673" selection-end="2673" vertical-scroll-proportion="0.019710906">
           <folding>
             <element signature="e#1371#1448#0" expanded="false" />
             <element signature="e#1499#1550#0" expanded="false" />
@@ -558,6 +405,48 @@
             <element signature="e#12241#12378#0" expanded="false" />
             <element signature="e#12451#12535#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="12" selection-start="3377" selection-end="3380" vertical-scroll-proportion="0.49612403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style3.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="23" selection-start="3954" selection-end="3954" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="947" selection-end="947" vertical-scroll-proportion="0.031712472">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="36" selection-start="1500" selection-end="1500" vertical-scroll-proportion="1.1728395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap-amelia.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="726" column="0" selection-start="12276" selection-end="12276" vertical-scroll-proportion="21.911469">
+          <folding />
         </state>
       </provider>
     </entry>
