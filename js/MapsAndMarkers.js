@@ -72,7 +72,6 @@ directionsObject = ( function () {
     };
 
     directionsObject.prototype.clearDirectionsLayer = function(objMap){
-        console.log('clearDirectionsLayer');
         directionsLayerInstance.setMap(null);
         directionsLayerInstance.setPanel(null);
 
@@ -87,7 +86,6 @@ directionsObject = ( function () {
 
         directionsLayerInstance.setMap(objMap);
         directionsLayerInstance.setPanel(theDirectionsPanel);
-        console.log('clearDirectionsLayer finish');
     };
 
     directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
@@ -112,7 +110,6 @@ directionsObject = ( function () {
                         map: objMap
                     }));
                 }
-                console.log ('nº boxypolys created --> ',i);
             }
         });
     };
@@ -127,8 +124,6 @@ directionsObject = ( function () {
                 lngNS:boxPolysBounds[i].ea.f
             });
         }
-        //response = JSON.stringify(response);
-        console.log(response);
         return response ;
     };
 

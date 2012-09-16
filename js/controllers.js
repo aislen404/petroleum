@@ -76,12 +76,12 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
         // Setting map event control for zoom changes
         $scope.mapObj.registerMapEvent('zoom_changed',function(){
-            console.log ('[EVENT] ZOOM:',$scope.mapObj.getZoom());
+            //console.log ('[EVENT] ZOOM:',$scope.mapObj.getZoom());
         });
 
         //Setting map event control for bounds changes
         $scope.mapObj.registerMapEvent('bounds_changed',function(){
-            console.log ('[EVENT] BOUNDS:',$scope.mapObj.getLatNS(),$scope.mapObj.getLongNS(),$scope.mapObj.getLatSW(),$scope.mapObj.getLongSW());
+            //console.log ('[EVENT] BOUNDS:',$scope.mapObj.getLatNS(),$scope.mapObj.getLongNS(),$scope.mapObj.getLatSW(),$scope.mapObj.getLongSW());
         });
     };
 
@@ -91,9 +91,10 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         $scope.showCombustibleOptions();
 
         try {
-            $scope.gasolinaCluster.clearMarkers();
+            for (var i in $scope.gasolinaCluster){
+                $scope.gasolinaCluster[i].clearMarkers();
+            }
             $scope.gasolinaCluster=[];
-            $scope.datos=null;
             clearTable();
         }catch(e){}
 
@@ -107,7 +108,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
             if($scope.directionLayerResponse != null){
 
-                console.log($scope.directionLayerResponse.length);
                 var bound;
                 for( bound in $scope.directionLayerResponse){
 
@@ -117,7 +117,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                     var lngSW = $scope.directionLayerResponse[bound].lngSW;
 
                     param = $scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
-                    console.log('URL para el proxy',uri+param);
                     $scope.gasCntrl(uri+param);
                 }
 
@@ -129,7 +128,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 var lngSW = $scope.mapObj.getLongSW();
 
                 param = $scope.gasolina_type+'&lngSW='+lngSW+'&latSW='+latSW+'&lngNS='+lngNS+'&latNS='+latNS;
-                console.log('URL para el proxy',uri+param);
                 $scope.gasCntrl(uri+param);
             }
 
@@ -140,8 +138,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
     $scope.gasCntrl = function (uri){
         var arryOfMarkers = [];
-
-        console.log('$scope.gasCntrl URL del PROXY--> ',uri);
 
         $.ajax({
             type: 'GET',
@@ -196,13 +192,8 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                     i+=1;
                 });
 
-                $scope.gasolinaCluster =poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj);
                 $scope.datos= angular.toJson($scope.datos);
-
-                console.log('Gasolineras',i-1);
-                console.log('cheapOption',cheapOption);
-                console.log('expensiveOption',expensiveOption);
-                console.log($scope.datos);
+                $scope.gasolinaCluster.push(poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj));
             }
         });
     }
