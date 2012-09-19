@@ -8,8 +8,6 @@ module = angular.module ('petroleum_app.controllers',[]);
 module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directionsServiceProvider,dataServiceProvider,geoMarkerServiceProvider,poiServiceCreator) {
 
 // --------- initialization of model-view bindings  --------- \\
-    //the dataset
-    $scope.gasolina_type=0;
 
     // map object
     $scope.mapObj = null;
@@ -17,10 +15,12 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     //geoposicion
     $scope.geopos = false;
     $scope.geoPosObj = null;
+    $scope.range = 1000;
 
     //gasolina
     $scope.gasolinaCluster=[];
     $scope.gasolina_type = 0;
+    $scope.gas_on_route=false;
 
     //route planning filters
     $scope.route_mode='driving';
@@ -41,6 +41,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
     // Main function in ng-init
     $scope.BeganToBegin = function (){
+
         $scope.initJqueryScripts();
         $scope.progressToggle();
         $scope.showLocalizacionOptions();
@@ -67,6 +68,13 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         $('#myModalRoutePlanning').toggle();
     };
 
+    $scope.renderToggle = function (){
+        renderToggle_view ('btn_renderToggle');
+    };
+
+    $scope.progressToggle = function (){
+        $('#myModalProgressAlert').toggle();
+    };
     // Control the creation of map
     $scope.createMap = function() {
 
@@ -101,7 +109,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         if($scope.gasolina_type !=0 ){
 
             $('#gas_ctrl').attr('class','gas-load');
-            $scope.progressToggle();
 
             var uri='dataModels/mitycProxy.php?tipo=';
             var param;
@@ -132,13 +139,12 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
             }
 
             $('#gas_ctrl').attr('class','gas');
-            $scope.progressToggle();
         }
     };
 
     $scope.gasCntrl = function (uri){
         var arryOfMarkers = [];
-
+        $scope.progressToggle();
         $.ajax({
             type: 'GET',
             url: uri,
@@ -196,13 +202,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 $scope.gasolinaCluster.push(poiServiceCreator.createGazCluster(arryOfMarkers,$scope.mapObj));
             }
         });
-    }
-    $scope.renderToggle = function (){
-        renderToggle_view ('btn_renderToggle');
-    };
-
-    $scope.progressToggle = function (){
-      $('#myModalProgressAlert').toggle();
+        $scope.progressToggle();
     };
 
     $scope.positionControl = function (){
@@ -281,7 +281,6 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         if(!$scope.directionLayer){
 
             $scope.showRoutePlanningOptions();
-            $scope.progressToggle();
 
             //Without origin or any destination is not possible calculate no route.
             if ($scope.origin == null) {
@@ -292,6 +291,8 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
                 alert("Click on the map to add an end point");
                 return;
             }
+
+            $scope.progressToggle();
 
             var mode;
             switch ( $scope.route_mode ) {
@@ -319,7 +320,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
 
             //Calling directly to the method of the map object
 
-            directionsServiceProvider.calculateDirectionsLayer(request,$scope.mapObj.mapInstance);
+            directionsServiceProvider.calculateDirectionsLayer(request,$scope.mapObj.mapInstance,$scope.range);
 
             //Unregistering the event for no more waypoints
             $scope.mapObj.unRegisterEvent('click');
@@ -339,7 +340,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     $scope.boundsRoute = function (){
         $scope.directionLayerResponse = directionsServiceProvider.getDirectionsBounds();
         console.log('controler --> $scope.directionLayerResponse: ',$scope.directionLayerResponse);
-    }
+    };
 
     $scope.removeTemporalMarkers = function(){
         for (var i = 0; i < $scope.wayPointsCluster.length; i++) {
@@ -360,9 +361,12 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         directionsServiceProvider.clearDirectionsLayer($scope.mapObj.mapInstance);
 
         $scope.directionLayer = false;
+        $scope.directionLayerResponse = null;
+        $scope.gas_on_route=false;
         $scope.waypoints=[];
         $scope.origin = null;
         $scope.destination = null;
+
 
         $('#gas_on_route_control').hide();
         $('#createRoute').show();

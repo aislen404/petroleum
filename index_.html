@@ -4,7 +4,7 @@
 	<meta charset=utf-8 />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Petroleum</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-amelia.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -19,7 +19,7 @@
     <!-- top navbar -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-            <a class="brand" href="#"><small>&nbsp;&#402; 19</small></a>
+            <a class="brand" href="#"><small>&nbsp;&#402; 18</small></a>
             <ul class="nav pull-right">
                 <li><a href="#" class="refresh" ng-click="gasToggle()"></a></li>
                 <li><a href="#" class="geopos" ng-click="showLocalizacionOptions()"></a></li>
@@ -134,7 +134,7 @@
                     <div class="control-group">
                         <label for="input_range" class="control-label">Radio: </label>
                         <div class="controls">
-                            <input id="input_range" type="number" class="input-small" min="1000" max="100000" step="500" value="1000" ng-model="range" onChange="javascript:output_range.value=(parseInt(input_range.value)/1000)+'Km';"/>
+                            <input id="input_range" type="number" class="input-small uneditable-input" min="1000" max="100000" step="500" value="1000" onChange="javascript:output_range.value=(parseInt(input_range.value)/1000)+'Km';"/>
                             <output id="output_range" for="input_range"></output>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                     </div>
 -->
                 </fieldset>
-                <p>
+                <p class="form-actions">
                     <button type="submit" class="btn btn-primary" ng-click="showLocalizacionOptions()" >Ok</button>
                 </p>
             </form>
@@ -186,7 +186,7 @@
                     </div>
 
                   </fieldset>
-                  <p>
+                  <p class="form-actions">
                     <button type="submit" class="btn btn-primary" ng-click="gasToggle()" >Ok</button>
                   </p>
               </form>

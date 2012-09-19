@@ -42,8 +42,8 @@ module.factory('directionsServiceProvider', function (){
         clearDirectionsLayer: function (objMap){
             return drObj.clearDirectionsLayer(objMap);
         },
-        calculateDirectionsLayer: function (request,objMap){
-            return drObj.calculateDirectionsLayer(request,objMap);
+        calculateDirectionsLayer: function (request,objMap,range){
+            return drObj.calculateDirectionsLayer(request,objMap,range);
         },
         getDirectionsBounds: function (){
             return drObj.getBoxPolysBounds();

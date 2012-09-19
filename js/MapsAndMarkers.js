@@ -88,13 +88,15 @@ directionsObject = ( function () {
         directionsLayerInstance.setPanel(theDirectionsPanel);
     };
 
-    directionsObject.prototype.calculateDirectionsLayer = function(request,objMap){
+    directionsObject.prototype.calculateDirectionsLayer = function(request,objMap,range){
         directionsServiceInstance.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
 
                 directionsLayerInstance.setDirections(response);
-
-                var distance = 2;
+                boxPolysBounds = [];
+                boxpolys = [];
+                var distance = range / 1000 ;
+                alert (distance);
                 var path = response.routes[0].overview_path;
                 var boxes = this.routeBoxer.box(path, distance);
 
