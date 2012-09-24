@@ -19,15 +19,33 @@ module.factory('mapServiceProvider', function (){
 // --------- THE GEOPOSITION  --------- \\
 //These service create the map and trigger the geolocalization on.
 module.factory('geoMarkerServiceProvider', function (){
+
+    var gmObj = new geoMarker ();
+
+
     return {
         activate: function (objMap){
-            return geoMarker(objMap);
+            return gmObj.activate(objMap);
         },
-        deactivate: function (){
-
+        getPosition: function (){
+            return gmObj.myPosition;
         }
     };
 });
+
+// --------- THE GEOCODER  --------- \\
+//These service get the address of our position.
+module.factory('geoCoderServiceProvider', function (){
+
+    var gcObj = new geoCoder;
+
+    return {
+        getAddress: function (LatLng){
+            return gcObj.getAddress(LatLng);
+        }
+    };
+});
+
 
 // --------- THE DIRECTION SERVICE  --------- \\
 //.

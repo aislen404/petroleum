@@ -2,29 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0164e3fc-b0ad-4908-9d23-6ba5d1788683" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-prueba1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap-prueba2.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/Dharma Type Font License.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/M+¥rten Nettelbladt - Miso License.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-bold-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/fonts/miso-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style3IE.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index__.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/MapsAndMarkers.js" afterPath="$PROJECT_DIR$/js/MapsAndMarkers.js" />
@@ -54,34 +31,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="60" selection-start="1027" selection-end="1027" vertical-scroll-proportion="-13.125">
+            <state line="112" column="42" selection-start="6783" selection-end="6783" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1767" selection-end="1767" vertical-scroll-proportion="-0.8134034">
-              <folding>
-                <element signature="e#4274#6355#0" expanded="false" />
-                <element signature="e#6398#6656#0" expanded="false" />
-                <element signature="e#6846#9742#0" expanded="false" />
-                <element signature="e#9872#11978#0" expanded="false" />
-                <element signature="e#12017#12213#0" expanded="false" />
-                <element signature="e#12261#12398#0" expanded="false" />
-                <element signature="e#12471#12555#0" expanded="false" />
-                <element signature="e#12683#13102#0" expanded="false" />
-              </folding>
+            <state line="212" column="106" selection-start="6722" selection-end="6722" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="70" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0">
+            <state line="26" column="35" selection-start="649" selection-end="649" vertical-scroll-proportion="0.019379845">
               <folding />
             </state>
           </provider>
@@ -90,7 +58,7 @@
       <file leaf-file-name="MapsAndMarkers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="43" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
+            <state line="50" column="30" selection-start="1672" selection-end="1682" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,10 +89,10 @@
         <option value="$PROJECT_DIR$/css/demo.css" />
         <option value="$PROJECT_DIR$/css/bootstrap-prueba1.css" />
         <option value="$PROJECT_DIR$/css/bootstrap-prueba2.css" />
-        <option value="$PROJECT_DIR$/js/services.js" />
-        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/MapsAndMarkers.js" />
+        <option value="$PROJECT_DIR$/js/services.js" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -280,12 +248,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.34956303" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.6416979" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.36204743" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19830628" sideWeight="0.6292135" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39950064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19830628" sideWeight="0.6641698" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -382,48 +350,33 @@
         <state line="3374" column="0" selection-start="78085" selection-end="78085" vertical-scroll-proportion="0.41701534" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="43" selection-start="3236" selection-end="3236" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="70" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="443" selection-end="443" vertical-scroll-proportion="0.019379845">
-          <folding />
-        </state>
+        <state line="27" column="13" selection-start="443" selection-end="443" vertical-scroll-proportion="0.019379845" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="1027" selection-end="1027" vertical-scroll-proportion="-13.125">
+        <state line="112" column="42" selection-start="6783" selection-end="6783" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1767" selection-end="1767" vertical-scroll-proportion="-0.8134034">
-          <folding>
-            <element signature="e#4274#6355#0" expanded="false" />
-            <element signature="e#6398#6656#0" expanded="false" />
-            <element signature="e#6846#9742#0" expanded="false" />
-            <element signature="e#9872#11978#0" expanded="false" />
-            <element signature="e#12017#12213#0" expanded="false" />
-            <element signature="e#12261#12398#0" expanded="false" />
-            <element signature="e#12471#12555#0" expanded="false" />
-            <element signature="e#12683#13102#0" expanded="false" />
-          </folding>
+        <state line="212" column="106" selection-start="6722" selection-end="6722" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="35" selection-start="649" selection-end="649" vertical-scroll-proportion="0.019379845">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/MapsAndMarkers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="30" selection-start="1672" selection-end="1682" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>

@@ -5,7 +5,7 @@ var module;
 
 module = angular.module ('petroleum_app.controllers',[]);
 
-module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directionsServiceProvider,dataServiceProvider,geoMarkerServiceProvider,poiServiceCreator) {
+module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directionsServiceProvider,dataServiceProvider,geoMarkerServiceProvider,geoCoderServiceProvider,poiServiceCreator) {
 
 // --------- initialization of model-view bindings  --------- \\
 
@@ -16,6 +16,7 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
     $scope.geopos = false;
     $scope.geoPosObj = null;
     $scope.range = 1000;
+    $scope.myPos = null;
 
     //gasolina
     $scope.gasolinaCluster=[];
@@ -209,8 +210,10 @@ module.controller('petroleumCtrl', function ($scope, mapServiceProvider,directio
         if($scope.mapObj.mapInstance){
             if($scope.geopos){
                 $scope.geoPosObj = geoMarkerServiceProvider.activate($scope.mapObj.mapInstance);
+                $scope.myPos = geoCoderServiceProvider.getAddress(geoMarkerServiceProvider.getPosition());
             }else{
                 $scope.geoPosObj = null;
+                $scope.myPos = '';
             }
         }
     };

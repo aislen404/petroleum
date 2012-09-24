@@ -26,14 +26,18 @@ markerObject = (function (){
 
 //The geoposition and marker
 geoMarker = ( function (){
-    function geoMarker (objMap){
+    function geoMarker (){
 
         this.geoMarker = new GeolocationMarker();
         this.geoMarker.setCircleOptions({fillColor: '#808080'});
+        this.myPosition = null;
+    }
 
-        google.maps.event.addListenerOnce(this.geoMarker, 'position_changed', function() {
+    geoMarker.prototype.activate = function (objMap){
+        google.maps.event.addListener(this.geoMarker, 'position_changed', function() {
             objMap.setCenter(this.getPosition());
             objMap.fitBounds(this.getBounds());
+            this.myPosition = this.getPosition();
         });
 
         google.maps.event.addListener(this.geoMarker, 'geolocation_error', function(e) {
@@ -41,9 +45,43 @@ geoMarker = ( function (){
         });
 
         this.geoMarker.setMap(objMap);
-    }
+    };
+
+    geoMarker.prototype.getPosition = function (){
+        return this.myPosition;
+    };
 
     return geoMarker;
+
+}).call(this);
+
+//The geocoder
+geoCoder = ( function (){
+    function geoCoder (){
+        this.geoCoder = new google.maps.Geocoder();
+    }
+
+    geoCoder.prototype.getAddress = function (LatLng){
+        this.geoCoder.geocode({'latLng': LatLng}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    return (results[1].formatted_address);
+                }
+            } else {
+                alert("Geocoder failed due to: " + status);
+            }
+        });
+    };
+/*          results[0].formatted_address: "275-291 Bedford Ave, Brooklyn, NY 11211, USA",
+            results[1].formatted_address: "Williamsburg, NY, USA",
+            results[2].formatted_address: "New York 11211, USA",
+            results[3].formatted_address: "Kings, New York, USA",
+            results[4].formatted_address: "Brooklyn, New York, USA",
+            results[5].formatted_address: "New York, New York, USA",
+            results[6].formatted_address: "New York, USA",
+            results[7].formatted_address: "United States" */
+
+    return geoCoder;
 
 }).call(this);
 
